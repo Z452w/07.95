@@ -18,7 +18,7 @@ ALIGNED8 static const Texture main_door_side_txt[] = {
 };
 
 ALIGNED8 static const Texture main_door_txt[] = {
-#include "actors/door/main_door_txt.rgba16.inc.c"
+#include "actors/coin/txt_coin1.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture rn_1_txt[] = {
