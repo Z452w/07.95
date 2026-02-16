@@ -509,7 +509,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                     m->pretipTimer = 0;
                 } else {
                     val14 = (m->intendedMag * 10000.0f) * 2.5f;
-                    set_mario_anim_with_accel(m, MARIO_ANIM_START_TIPTOE, val14);
+                    set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val14);
                     play_step_sound(m, 7, 22);
                     if (is_anim_past_frame(m, 25)) {
                         m->pretipTimer += 1;
