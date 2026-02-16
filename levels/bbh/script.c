@@ -32,15 +32,15 @@ static const LevelScript script_func_local_2[] = {
 };
 
 static const LevelScript script_func_local_3[] = {
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 2248, 50, 465, 0, -140, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1845, 50, -40, 0, -180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1453, 50, 716, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ -1244, 0, 874, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ -676, 0, 1742, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 660, 50, -2090, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 660, 50, -1210, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 2299, 50, -2118, 0, 135, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1099, 50, -1118, 0, -55, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 2248, 50, 465, 0, -140, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1845, 50, -40, 0, -180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1453, 50, 716, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ -1244, 0, 874, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ -676, 0, 1742, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 660, 50, -2090, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 660, 50, -1210, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 2299, 50, -2118, 0, 135, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
+    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1099, 50, -1118, 0, -55, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
     RETURN(),
 };
 
