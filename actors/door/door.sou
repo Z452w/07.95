@@ -13,7 +13,6 @@ static Lights1 light_main_door[] = {
 /* ========================================================================================
 		: Texture data of MainDoor.
 ===========================================================================================	*/
-#ifdef POWBUILD
 ALIGNED8 static const Texture main_door_side_txt[] = {
 #include "actors/door/main_door_side_txt.rgba16.inc.c"
 };
@@ -22,30 +21,20 @@ ALIGNED8 static const Texture main_door_txt[] = {
 #include "actors/door/main_door_txt.rgba16.inc.c"
 };
 
-#else
-ALIGNED8 static const Texture main_door_side_txt[] = {
-#include "actors/door/teresa_door_side_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture main_door_txt[] = {
-#include "actors/door/teresa_door_txt.rgba16.inc.c"
-};
-
-#endif
 ALIGNED8 static const Texture rn_1_txt[] = {
-#include "actors/door/rn_1_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture rn_2_txt[] = {
-#include "actors/door/rn_2_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture rn_3_txt[] = {
-#include "actors/door/rn_3_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture rn_4_txt[] = {
-#include "actors/door/rn_4_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 /* ========================================================================================
