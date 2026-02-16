@@ -51,21 +51,18 @@ static const LevelScript script_func_local_2[] = {
 };
 
 static const LevelScript script_func_local_3[] = {
-    #ifdef OCTOBERTHIRTEEN
-    //OBJECT(/*model*/ MODEL_THWOMP,            /*pos*/  3562, 1939, -1500, /*angle*/ 0,   90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvThwomp),
-    //OBJECT(/*model*/ MODEL_THWOMP,            /*pos*/  3530, 1075, -3320, /*angle*/ 0,  180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvThwomp2),
-    #else
+    #ifndef OCTOBERTHIRTEEN
     OBJECT(/*model*/ MODEL_THWOMP,            /*pos*/  3562, 1939, -1500, /*angle*/ 0,   90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvThwomp),
     OBJECT(/*model*/ MODEL_THWOMP,            /*pos*/  3530, 1075, -3320, /*angle*/ 0,  180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvThwomp2),
     #endif
     OBJECT(/*model*/ MODEL_NONE,              /*pos*/  -856,  922,  3819, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBetaFishSplashSpawner),
-    OBJECT(/*model*/ MODEL_PIRANHA_PLANT,     /*pos*/  1822, 2560,  -101, /*angle*/ 0,   90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvPiranhaPlant),
+    //OBJECT(/*model*/ MODEL_PIRANHA_PLANT,     /*pos*/  1822, 2560,  -101, /*angle*/ 0,   90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvPiranhaPlant),
     //OBJECT(/*model*/ MODEL_WHOMP,             /*pos*/ -1985, 2560,   604, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallWhomp),
-    OBJECT(/*model*/ MODEL_BULLET_BILL,       /*pos*/  1280, 3712,   968, /*angle*/ 0,  180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBulletBill),
+    //OBJECT(/*model*/ MODEL_BULLET_BILL,       /*pos*/  1280, 3712,   968, /*angle*/ 0,  180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBulletBill),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_08, /*pos*/     0, 3584,     0, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvTower),
-    OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_09, /*pos*/  1280, 3584,   896, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBulletBillCannon),
+    //OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_09, /*pos*/  1280, 3584,   896, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBulletBillCannon),
     OBJECT(/*model*/ MODEL_NONE,              /*pos*/     0, 3483,     0, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvTowerPlatformGroup),
-    OBJECT(/*model*/ MODEL_HOOT,              /*pos*/  2560,  700,  4608, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvHoot),
+    //OBJECT(/*model*/ MODEL_HOOT,              /*pos*/  2560,  700,  4608, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvHoot),
     RETURN(),
 };
 
@@ -91,7 +88,7 @@ const LevelScript level_wf_entry[] = {
     JUMP_LINK(script_func_global_1),
     JUMP_LINK(script_func_global_2),
     JUMP_LINK(script_func_global_15),
-    LOAD_MODEL_FROM_GEO(MODEL_BUBBLY_TREE,                      RCP_HmsMainTree),
+    //LOAD_MODEL_FROM_GEO(MODEL_BUBBLY_TREE,                      RCP_HmsMainTree),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_03,                wf_geo_5),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_04,                wf_geo_6),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_05,                wf_geo_7),
@@ -133,7 +130,6 @@ const LevelScript level_wf_entry[] = {
         JUMP_LINK(script_func_local_4),
         TERRAIN(/*terrainData*/ mountain_collision),
         MACRO_OBJECTS(/*objList*/ mountain_macro),
-        SHOW_DIALOG(/*index*/ 0x00, DIALOG_030),
         SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0005, /*seq*/ SEQ_LEVEL_GRASS),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
