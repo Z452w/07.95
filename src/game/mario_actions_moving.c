@@ -660,8 +660,11 @@ void push_or_sidle_wall(struct MarioState *m, Vec3f startPos) {
         play_step_sound(m, 6, 18);
     } else {
         if (dWallAngle < 0) {
-            set_mario_anim_with_accel(m, MARIO_ANIM_RUNNING, val04);
+            set_mario_animation(m, MARIO_ANIM_PUSHING);
+        } else {
+            set_mario_animation(m, MARIO_ANIM_PUSHING);
         }
+    }
 
         if (m->forwardVel < 4.0f) {
             m->particleFlags |= PARTICLE_DUST;
