@@ -904,13 +904,9 @@ s32 act_turning_around(struct MarioState *m) {
     if (m->forwardVel >= 18.0f) {
         set_mario_animation(m, MARIO_ANIM_TURNING_PART1);
     } else {
-        set_mario_animation(m, MARIO_ANIM_IDLE);
-        if (is_anim_at_end(m)) {
-            if (m->forwardVel > 0.0f) {
-                begin_walking_action(m, -m->forwardVel, ACT_WALKING, 0);
-            } else {
-                begin_walking_action(m, 8.0f, ACT_WALKING, 0);
-            }
+        if (m->intendedMag < 0.1f) {
+        m->forwardVel = 0.0f;
+        set_mario_action(m, ACT_IDLE, 0);
         }
     }
 
@@ -927,7 +923,7 @@ s32 act_finish_turning_around(struct MarioState *m) {
     }
 
     update_walking_speed(m);
-    set_mario_animation(m, MARIO_ANIM_IDLE);
+    set_mario_animation(m, MARIO_ANIM_RUNNING);
 
     if (perform_ground_step(m) == GROUND_STEP_LEFT_GROUND) {
         set_mario_action(m, ACT_FREEFALL, 0);
@@ -952,8 +948,8 @@ s32 act_braking(struct MarioState *m) {
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
+    //if (m->input & INPUT_B_PRESSED) {
+        //return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
     }
 
     switch (perform_ground_step(m)) {
