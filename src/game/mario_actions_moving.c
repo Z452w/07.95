@@ -462,9 +462,8 @@ s32 check_ground_dive_or_punch(struct MarioState *m) {
             m->vel[1] = 20.0f;
             return set_mario_action(m, ACT_DIVE, 1);
         }
-     
-        if (mario_check_object_grab(m)) {
-        return set_mario_action(m, ACT_PICKING_UP, 0);
+
+        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
     }
 
     return FALSE;
@@ -659,12 +658,7 @@ void push_or_sidle_wall(struct MarioState *m, Vec3f startPos) {
         m->flags |= MARIO_UNKNOWN_31;
         set_mario_animation(m, MARIO_ANIM_PUSHING);
         play_step_sound(m, 6, 18);
-    } else {
-        if (dWallAngle < 0) {
-            set_mario_anim_with_accel(m, MARIO_ANIM_SIDESTEP_RIGHT, val04);
-        } else {
-            set_mario_anim_with_accel(m, MARIO_ANIM_SIDESTEP_LEFT, val04);
-        }
+    }
 
         if (m->forwardVel < 4.0f) {
             m->particleFlags |= PARTICLE_DUST;
@@ -953,8 +947,7 @@ s32 act_braking(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
-        if (mario_check_object_grab(m)) {
-        return set_mario_action(m, ACT_PICKING_UP, 0);
+        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
     }
 
     switch (perform_ground_step(m)) {
