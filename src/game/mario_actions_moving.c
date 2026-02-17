@@ -872,7 +872,7 @@ s32 act_turning_around(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_JUMP, 0);
+        return set_jumping_action(m, ACT_SIDE_FLIP, 0);
     }
 
     if (m->input & INPUT_UNKNOWN_5) {
@@ -922,7 +922,7 @@ s32 act_finish_turning_around(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_JUMP, 0);
+        return set_jumping_action(m, ACT_SIDE_FLIP, 0);
     }
 
     update_walking_speed(m);
@@ -1644,7 +1644,7 @@ s32 mario_execute_moving_action(struct MarioState *m) {
 #ifdef POWBUILD
         m->particleFlags |= PARTICLE_WAVE_TRAIL;
 #endif
-        m->particleFlags &= ~PARTICLE_DUST;
+        //m->particleFlags &= ~PARTICLE_DUST;
     }
 
     return cancel;
