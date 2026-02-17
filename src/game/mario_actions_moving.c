@@ -1644,7 +1644,7 @@ s32 mario_execute_moving_action(struct MarioState *m) {
 #ifdef POWBUILD
         m->particleFlags |= PARTICLE_WAVE_TRAIL;
 #endif
-        //m->particleFlags &= ~PARTICLE_DUST;
+        m->particleFlags &= ~PARTICLE_DUST;
     }
 
     return cancel;
