@@ -88,7 +88,7 @@ const LevelScript level_wf_entry[] = {
     JUMP_LINK(script_func_global_1),
     JUMP_LINK(script_func_global_2),
     JUMP_LINK(script_func_global_15),
-    //LOAD_MODEL_FROM_GEO(MODEL_BUBBLY_TREE,                      RCP_HmsMainTree),
+    LOAD_MODEL_FROM_GEO(MODEL_BUBBLY_TREE,                      RCP_HmsMainTree),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_03,                wf_geo_5),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_04,                wf_geo_6),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_05,                wf_geo_7),
