@@ -68,7 +68,7 @@ static const Gfx mat_castle_inside_WallTopMaterial[] = {
 
 #define G_CC_MODULATERGBAFADE TEXEL0, 0, SHADE, 0, TEXEL0, 0, ENVIRONMENT, 0
 
-//static const Gfx mat_castle_inside_MoonMaterial[] = {
+static const Gfx mat_castle_inside_MoonMaterial[] = {
 	//gsDPPipeSync(),
 	//gsDPSetEnvColor(255, 255, 255, 200),
     //gsDPSetCombineMode(G_CC_MODULATERGBAFADE, G_CC_MODULATERGBAFADE),
@@ -84,9 +84,9 @@ static const Gfx mat_castle_inside_WallTopMaterial[] = {
 	//gsDPSetTileSize(0, 0, 0, 124, 124),
 	//gsSPSetLights1(castle_inside_lights_main),
 	//gsSPEndDisplayList(),
-//};
+};
 
-//static const Gfx mat_castle_inside_StarMaterial[] = {
+static const Gfx mat_castle_inside_StarMaterial[] = {
 	//gsDPPipeSync(),
 	//gsDPSetEnvColor(255, 255, 255, 200),
     //gsDPSetCombineMode(G_CC_MODULATERGBAFADE, G_CC_MODULATERGBAFADE),
@@ -102,7 +102,7 @@ static const Gfx mat_castle_inside_WallTopMaterial[] = {
 	//gsDPSetTileSize(0, 0, 0, 124, 124),
 	//gsSPSetLights1(castle_inside_lights_main),
 	//gsSPEndDisplayList(),
-//};
+};
 
 static const Gfx mat_revert_castle_inside_DecalMaterial[] = {
 	gsDPPipeSync(),
