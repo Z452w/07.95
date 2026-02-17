@@ -505,12 +505,9 @@ s32 act_start_crawling(struct MarioState *m) {
         return set_mario_action(m, ACT_BEGIN_SLIDING, 0);
     }
 
-    stationary_ground_step(m);
-    set_mario_animation(m, MARIO_ANIM_TIPTOE);
-    if (is_anim_past_end(m)) {
-        set_mario_action(m, ACT_CRAWLING, 0);
-    }
-
+    stationary_ground_step(m); 
+    set_mario_action(m, ACT_CRAWLING, 0);
+        
     return FALSE;
 }
 
@@ -528,10 +525,8 @@ s32 act_stop_crawling(struct MarioState *m) {
     }
 
     stationary_ground_step(m);
-    set_mario_animation(m, MARIO_ANIM_TIPTOE);
-    if (is_anim_past_end(m)) {
         set_mario_action(m, ACT_CROUCHING, 0);
-    }
+        
     return FALSE;
 }
 
