@@ -460,26 +460,7 @@ s32 act_hold_freefall(struct MarioState *m) {
 }
 
 s32 act_side_flip(struct MarioState *m) {
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
-    }
-
-    if (m->input & INPUT_Z_PRESSED) {
-        return set_mario_action(m, ACT_GROUND_POUND, 0);
-    }
-
-    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
-
-    if (common_air_action_step(m, ACT_SIDE_FLIP_LAND, MARIO_ANIM_SLIDEFLIP, AIR_STEP_CHECK_LEDGE_GRAB)
-        != AIR_STEP_GRABBED_LEDGE) {
-        m->marioObj->header.gfx.angle[1] += 0x8000;
-    }
-
-    // This must be one line to match on -O2
-    // clang-format off
-    if (m->marioObj->header.gfx.animInfo.animFrame == 6) play_sound(SOUND_ACTION_SIDE_FLIP_UNK, m->marioObj->header.gfx.cameraToObject);
-    // clang-format on
-    return FALSE;
+    set_mario_action(m, ACT_JUMP, 0);
 }
 
 s32 act_wall_kick_air(struct MarioState *m) {
