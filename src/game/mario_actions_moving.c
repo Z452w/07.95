@@ -463,7 +463,7 @@ s32 check_ground_dive_or_punch(struct MarioState *m) {
             return set_mario_action(m, ACT_DIVE, 1);
         }
 
-        //return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
+        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
     }
 
     return FALSE;
@@ -508,7 +508,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                     m->pretipTimer = 0;
                 } else {
                     val14 = (m->intendedMag * 10000.0f) * 2.5f;
-                    set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val14);
+                    set_mario_anim_with_accel(m, MARIO_ANIM_START_TIPTOE, val14);
                     play_step_sound(m, 7, 22);
                     if (is_anim_past_frame(m, 25)) {
                         m->pretipTimer += 1;
@@ -542,7 +542,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                 } else {
                     //! (Speed Crash) If Mario's speed is more than 2^17.
                     val14 = (s32) (val04 / 4.0f * 0x10000);
-                    set_mario_anim_with_accel(m, MARIO_ANIM_START_TIPTOE, val14);
+                    set_mario_anim_with_accel(m, MARIO_ANIM_WALKING, val14);
                     play_step_sound(m, 10, 49);
 
                     val0C = FALSE;
@@ -660,9 +660,9 @@ void push_or_sidle_wall(struct MarioState *m, Vec3f startPos) {
         play_step_sound(m, 6, 18);
     } else {
         if (dWallAngle < 0) {
-            set_mario_anim_with_accel(m, MARIO_ANIM_PUSHING, val04);
+            set_mario_anim_with_accel(m, MARIO_ANIM_SIDESTEP_RIGHT, val04);
         } else {
-            set_mario_anim_with_accel(m, MARIO_ANIM_PUSHING, val04);
+            set_mario_anim_with_accel(m, MARIO_ANIM_SIDESTEP_LEFT, val04);
         }
 
         if (m->forwardVel < 4.0f) {
@@ -951,8 +951,8 @@ s32 act_braking(struct MarioState *m) {
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 
-    //if (m->input & INPUT_B_PRESSED) {
-        //return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
+    if (m->input & INPUT_B_PRESSED) {
+        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
     }
 
     switch (perform_ground_step(m)) {
