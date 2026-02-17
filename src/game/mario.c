@@ -1609,6 +1609,7 @@ void init_mario(void) {
 }
 
 void init_mario_from_save_file(void) {
+    return;
     gMarioState->unk00 = 0;
     gMarioState->flags = 0;
     gMarioState->action = 0;
@@ -1618,8 +1619,8 @@ void init_mario_from_save_file(void) {
     gMarioState->controller = &gControllers[0];
     gMarioState->animList = &gPlayerAnimsBuf[0];
 
-    gMarioState->numCoins = 2;
-    gMarioState->numStars = 1;
+    gMarioState->numCoins = 0;
+    gMarioState->numStars = 0;
     gMarioState->numKeys = 0;
 
     gMarioState->numLives = 2;
