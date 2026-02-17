@@ -508,7 +508,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                     m->pretipTimer = 0;
                 } else {
                     val14 = (m->intendedMag * 10000.0f) * 2.5f;
-                    set_mario_anim_with_accel(m, MARIO_ANIM_START_TIPTOE, val14);
+                    set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val14);
                     play_step_sound(m, 7, 22);
                     if (is_anim_past_frame(m, 25)) {
                         m->pretipTimer += 1;
@@ -542,7 +542,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                 } else {
                     //! (Speed Crash) If Mario's speed is more than 2^17.
                     val14 = (s32) (val04 / 4.0f * 0x10000);
-                    set_mario_anim_with_accel(m, MARIO_ANIM_WALKING, val14);
+                    set_mario_anim_with_accel(m, MARIO_ANIM_START_TIPTOE, val14);
                     play_step_sound(m, 10, 49);
 
                     val0C = FALSE;
@@ -1088,7 +1088,7 @@ s32 act_crawling(struct MarioState *m) {
     }
 
     val04 = (s32) (m->intendedMag * 2.0f * 0x10000);
-    set_mario_anim_with_accel(m, MARIO_ANIM_CRAWLING, val04);
+    set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val04);
     play_step_sound(m, 26, 79);
     return FALSE;
 }
