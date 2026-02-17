@@ -901,16 +901,30 @@ s32 act_turning_around(struct MarioState *m) {
             break;
     }
 
-    if (m->forwardVel >= 18.0f) {
-        set_mario_animation(m, MARIO_ANIM_TURNING_PART1);
+    if (m->wall == NULL || dWallAngle <= -29128 || dWallAngle >= 29128) {
+        m->flags |= MARIO_UNKNOWN_31;
+        set_mario_animation(m, MARIO_ANIM_PUSHING);
+        play_step_sound(m, 6, 18);
     } else {
-        if (m->intendedMag < 0.1f) {
-        m->forwardVel = 0.0f;
-        set_mario_action(m, ACT_IDLE, 0);
+        if (dWallAngle < 0) {
+            set_mario_anim_with_accel(m, MARIO_ANIM_PUSHING, val04);
+        } else {
+            set_mario_anim_with_accel(m, MARIO_ANIM_PUSHING, val04);
         }
-    }
 
-    return FALSE;
+        if (m->forwardVel < 4.0f) {
+            m->particleFlags |= PARTICLE_DUST;
+        }
+
+        if (m->forwardVel > 6.0f) {
+            mario_set_forward_vel(m, 6.0f);
+        }
+
+        m->actionState = 1;
+        m->actionArg = wallAngle + 0x8000;
+        m->marioObj->header.gfx.angle[1] = wallAngle + 0x8000;
+        m->marioObj->header.gfx.angle[2] = find_floor_slope(m, 0x4000);
+    }
 }
 
 s32 act_finish_turning_around(struct MarioState *m) {
