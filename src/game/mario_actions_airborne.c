@@ -399,7 +399,7 @@ s32 act_double_jump(struct MarioState *m) {
         return set_mario_action(m, ACT_GROUND_POUND, 0);
     }
 
-    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_HAUGH);
+    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
     common_air_action_step(m, ACT_DOUBLE_JUMP_LAND, animation,
                            AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
     return FALSE;
@@ -523,29 +523,29 @@ s32 act_twirling(struct MarioState *m) {
     m->twirlYaw += m->angleVel[1];
 
     switch (m->actionArg) {
+        //case 0:
+           // set_mario_animation(m, MARIO_ANIM_DOUBLE_JUMP_RISE);
+         //   play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
+          //  if (m->vel[1] < 0.0f) {
+          //      m->actionArg = 1;
+          //  }
+           // break;
+
         case 0:
-            set_mario_animation(m, MARIO_ANIM_DOUBLE_JUMP_RISE);
-            play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHOO);
-            if (m->vel[1] < 0.0f) {
+            set_mario_animation(m, MARIO_ANIM_START_TWIRL);
+            if (is_anim_past_end(m)) {
                 m->actionArg = 1;
             }
             break;
 
         case 1:
-            set_mario_animation(m, MARIO_ANIM_START_TWIRL);
-            if (is_anim_past_end(m)) {
-                m->actionArg = 2;
-            }
-            break;
-
-        case 2:
             set_mario_animation(m, MARIO_ANIM_TWIRL);
             break;
     }
 
-    if (startTwirlYaw > m->twirlYaw) {
-        play_sound(SOUND_ACTION_TWIRL, m->marioObj->header.gfx.cameraToObject);
-    }
+    //if (startTwirlYaw > m->twirlYaw) {
+       // play_sound(SOUND_ACTION_TWIRL, m->marioObj->header.gfx.cameraToObject);
+   // }
 
     update_lava_boost_or_twirling(m);
 
