@@ -130,7 +130,7 @@ s32 act_idle(struct MarioState *m) {
         }
 
         if (is_anim_at_end(m)) {
-            ++m->actionState; /* 'm->actionState = 3;' should work should this not */
+            m->actionState == 0;
         }
     }
 
@@ -328,23 +328,7 @@ s32 act_crouching(struct MarioState *m) {
 }
 
 s32 act_panting(struct MarioState *m) {
-    if (m->input & INPUT_STOMPED) {
-        return set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
-    }
-
-    if (m->health >= 0x500) {
-        return set_mario_action(m, ACT_IDLE, 0);
-    }
-
-    if (check_common_idle_cancels(m)) {
-        return TRUE;
-    }
-
-    set_mario_animation(m, MARIO_ANIM_WALK_PANTING);
-
-    stationary_ground_step(m);
-    m->marioBodyState->eyeState = MARIO_EYES_HALF_CLOSED;
-    return FALSE;
+    set_mario_action(m, ACT_IDLE, 0);
 }
 
 s32 act_hold_panting_unused(struct MarioState *m) {
