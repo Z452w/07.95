@@ -1628,7 +1628,7 @@ void init_mario_from_save_file(void) {
     gMarioState->prevNumStarsForDialog = gMarioState->numStars;
     gMarioState->unkB0 = 0xBD;
 
-    gHudDisplay.coins = 2;
+    gHudDisplay.coins = 0;
     gHudDisplay.wedges = 8;
 
     gMessageHasBeenRead = 0;
