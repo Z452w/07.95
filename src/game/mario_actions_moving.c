@@ -1088,7 +1088,7 @@ s32 act_crawling(struct MarioState *m) {
     }
 
     val04 = (s32) (m->intendedMag * 2.0f * 0x10000);
-    set_mario_anim_with_accel(m, MARIO_ANIM_CROUCHING, val04);
+    set_mario_anim_with_accel(m, MARIO_ANIM_CRAWLING, val04);
     play_step_sound(m, 26, 79);
     return FALSE;
 }
