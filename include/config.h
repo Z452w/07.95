@@ -23,12 +23,10 @@
 //#define POWBUILD
 
 // 1995/10/13 Build
-//#define OCTOBERTHIRTEEN
+#define OCTOBERTHIRTEEN
 
 // Debug Build
-#ifdef OCTOBERTHIRTEEN
-//#define DEBUG
-#else
+#ifndef OCTOBERTHIRTEEN
 #define DEBUG
 #endif
 
