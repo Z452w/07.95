@@ -4379,11 +4379,13 @@ u8 get_cutscene_from_mario_status(struct Camera *c) {
                 cutscene = CUTSCENE_DANCE_DEFAULT;
                 break;
         }
+      #ifndef OCTOBERTHIRTEEN
         switch (sMarioCamState->cameraEvent) {
             case CAM_EVENT_START_INTRO:
                 cutscene = CUTSCENE_INTRO;
                 break;
         }
+      #endif
     }
     //! doorStatus is reset every frame. CameraTriggers need to constantly set doorStatus
     c->doorStatus = DOOR_DEFAULT;
@@ -6114,7 +6116,7 @@ BAD_RETURN(s32) cutscene_non_painting_death(struct Camera *c) {
     cutscene_event(cutscene_non_painting_set_cam_focus, c, 0, -1);
     sStatusFlags |= CAM_FLAG_UNUSED_CUTSCENE_ACTIVE;
 }
-
+#ifndef OCTOBERTHIRTEEN
 BAD_RETURN(s32) cutscene_intro_init(struct Camera *c) {
     c->pos[1] += 144.0f; // original value was 145
     rotate_and_move_vec3f(c->pos, sMarioCamState->pos, -524, 0, 430);
@@ -6153,7 +6155,7 @@ BAD_RETURN(s32) cutscene_intro_end(struct Camera *c) {
         }
     }
 }
-
+#endif
 BAD_RETURN(s32) cutscene_enter_painting_stub(UNUSED struct Camera *c) {
 }
 
@@ -6545,8 +6547,9 @@ struct Cutscene sCutsceneUnusedExit[] = { { cutscene_unused_exit_start, 1 },
 /**
  * The intro of the game.
  */
+#ifndef OCTOBERTHIRTEEN
 struct Cutscene sCutsceneIntro[] = { { cutscene_intro, 75 }, { cutscene_intro_end, CUTSCENE_LOOP } };
-
+#endif
 /**
  * Cutscene that plays when Mario dies while standing, or from electrocution.
  */
@@ -6700,7 +6703,9 @@ void play_cutscene(struct Camera *c) {
         CUTSCENE(CUTSCENE_DEATH_EXIT, sCutsceneDeathExit)
         CUTSCENE(CUTSCENE_EXIT_PAINTING_SUCC, sCutsceneExitPaintingSuccess)
         CUTSCENE(CUTSCENE_UNUSED_EXIT, sCutsceneUnusedExit)
+        #ifndef OCTOBERTHIRTEEN
         CUTSCENE(CUTSCENE_INTRO, sCutsceneIntro)
+        #endif
         CUTSCENE(CUTSCENE_ENTER_BOWSER_ARENA, sCutsceneEnterBowserArena)
         CUTSCENE(CUTSCENE_DANCE_DEFAULT, sCutsceneDanceDefaultRotate)
         CUTSCENE(CUTSCENE_0F_UNUSED, sCutsceneUnused)
@@ -6834,18 +6839,26 @@ void zoom_fov_30(UNUSED struct MarioState *m) {
  * mario falls a sleep.
  */
 void fov_default(struct MarioState *m) {
-  // Footage shows that Mario's idle state was considered a sleeping state.
+    sStatusFlags &= ~CAM_FLAG_SLEEPING;
+
+    // Footage shows that Mario's idle state was considered a sleeping state.
     if (m->action == ACT_IDLE || m->action == ACT_START_SLEEPING || m->action == ACT_SLEEPING) {
         if (m->sleepTimer < 135) {
             m->sleepTimer++; // Increase the timer
-            camera_approach_f32_symmetric_bool(&sFOVState.fov, 30.f, (30.f - sFOVState.fov) / 30.f);
+            camera_approach_f32_symmetric_bool(&sFOVState.fov, 45.f, (45.f - sFOVState.fov) / 30.f);
         } else { // Gradually set the FOV to 30 if the threshold is reached
-            camera_approach_f32_symmetric_bool(&sFOVState.fov, 30.f, (30.f - sFOVState.fov) / 30.f);
+            camera_approach_f32_symmetric_bool(&sFOVState.fov, 45.f, (45.f - sFOVState.fov) / 30.f);
             sStatusFlags |= CAM_FLAG_SLEEPING;
         }
     } else {
         m->sleepTimer = 0; // Reset the timer and set the FOV back to 45 when Mario isn't sleeping
-        camera_approach_f32_symmetric_bool(&sFOVState.fov, 30.f, (30.f - sFOVState.fov) / 30.f);
+        camera_approach_f32_symmetric_bool(&sFOVState.fov, 45.f, (45.f - sFOVState.fov) / 30.f);
+    }
+
+    // Nintendo is dumb
+    if ((gCurrLevelNum == LEVEL_CCM) || (gCurrLevelNum == LEVEL_DDD)) {
+        sFOVState.fov = 45.f;
+    }
 }
 
 //??! Literally the exact same as below
