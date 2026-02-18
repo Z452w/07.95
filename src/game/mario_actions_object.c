@@ -108,7 +108,7 @@ s32 act_punching(struct MarioState *m) {
 
     m->actionState = 1;
     if (m->actionArg == 0) {
-        m->actionTimer = 0;
+        m->actionTimer = 1;
     }
 
     if (m->actionTimer > 0) {
