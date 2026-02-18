@@ -303,7 +303,7 @@ void general_star_dance_handler(struct MarioState *m) {
     if (m->actionState == 0) {
         switch (++m->actionTimer) {
             case 1:
-                spawn_object(m->marioObj, MODEL_STAR, bhvCelebrationStar);
+                //spawn_object(m->marioObj, MODEL_STAR, bhvCelebrationStar);
                 disable_background_sound();
                 play_course_clear();
                 break;
