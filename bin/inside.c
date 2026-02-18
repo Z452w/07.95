@@ -5,22 +5,22 @@
 
 // 0x09000000
 ALIGNED8 const Texture inside_09000000[] = {
-#include "textures/inside/inside_castle_textures.00000.rgba16.inc.c"
+#include "levels/ccm/5.rgba16.inc.c"
 };
 
 // 0x09001000
 ALIGNED8 const Texture inside_09001000[] = {
-#include "textures/inside/inside_castle_textures.01000.rgba16.inc.c"
+#include "levels/ccm/5.rgba16.inc.c"
 };
 
 // 0x09002000
 ALIGNED8 const Texture inside_09002000[] = {
-#include "textures/inside/inside_castle_textures.02000.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 // 0x09002800
 ALIGNED8 const Texture inside_09002800[] = {
-#include "textures/inside/inside_castle_textures.02800.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 // 0x09003000
