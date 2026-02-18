@@ -98,12 +98,26 @@ s32 mario_update_punch_sequence(struct MarioState *m) {
 }
 
 s32 act_punching(struct MarioState *m) {
-    if (m->usedObj != NULL) {
-        return set_mario_action(m, ACT_PICKING_UP, 0);
-    } else {
-    
-    return set_mario_action(m, ACT_IDLE, 0);
+    if (m->input & INPUT_STOMPED) {
+        return drop_and_set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }
+
+    if (m->input & (INPUT_NONZERO_ANALOG | INPUT_A_PRESSED | INPUT_OFF_FLOOR | INPUT_ABOVE_SLIDE)) {
+        return check_common_action_exits(m);
+    }
+
+    m->actionState = 1;
+    if (m->actionArg == 0) {
+        m->actionTimer = 0;
+    }
+
+    if (m->actionTimer > 0) {
+        m->actionTimer--;
+    }
+
+    mario_update_punch_sequence(m);
+    perform_ground_step(m);
+    return FALSE;
 }
 
 s32 act_picking_up(struct MarioState *m) {
