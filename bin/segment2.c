@@ -11,43 +11,43 @@
 // SM64 (US/JP/EU/SH) Segment 02
 
 ALIGNED8 static const Texture texture_hud_char_0[] = {
-#include "textures/ipl3_raw/ipl3_font_26.ia1.inc.c"
+#include "textures/segment2/segment2.00000.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_1[] = {
-#include "textures/ipl3_raw/ipl3_font_27.ia1.inc.c"
+#include "textures/segment2/segment2.00200.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_2[] = {
-#include "textures/ipl3_raw/ipl3_font_28.ia1.inc.c"
+#include "textures/segment2/segment2.00400.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_3[] = {
-#include "textures/ipl3_raw/ipl3_font_29.ia1.inc.c"
+#include "textures/segment2/segment2.00600.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_4[] = {
-#include "textures/ipl3_raw/ipl3_font_30.ia1.inc.c"
+#include "textures/segment2/segment2.00800.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_5[] = {
-#include "textures/ipl3_raw/ipl3_font_31.ia1.inc.c"
+#include "textures/segment2/segment2.00A00.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_6[] = {
-#include "textures/ipl3_raw/ipl3_font_32.ia1.inc.c"
+#include "textures/segment2/segment2.00C00.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_7[] = {
-#include "textures/ipl3_raw/ipl3_font_33.ia1.inc.c"
+#include "textures/segment2/segment2.00E00.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_8[] = {
-#include "textures/ipl3_raw/ipl3_font_34.ia1.inc.c"
+#include "textures/segment2/segment2.01000.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_9[] = {
-#include "textures/ipl3_raw/ipl3_font_35.ia1.inc.c"
+#include "textures/segment2/segment2.01200.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_hud_char_A[] = {
