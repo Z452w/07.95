@@ -98,7 +98,7 @@ s32 mario_update_punch_sequence(struct MarioState *m) {
 }
 
 s32 act_punching(struct MarioState *m) {
-    set_mario_action(m, ACT_PICKING_UP, actionArg);
+    return set_mario_action(m, ACT_PICKING_UP, m->actionArg);
 }
 
 s32 act_picking_up(struct MarioState *m) {
