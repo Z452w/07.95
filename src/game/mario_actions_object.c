@@ -103,38 +103,23 @@ s32 act_punching(struct MarioState *m) {
         return drop_and_set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }
 
-    if (m->input & INPUT_OFF_FLOOR) {
-        return drop_and_set_mario_action(m, ACT_FREEFALL, 0);
+    if (m->input & (INPUT_NONZERO_ANALOG | INPUT_A_PRESSED | INPUT_OFF_FLOOR | INPUT_ABOVE_SLIDE)) {
+        return check_common_action_exits(m);
     }
 
-    if (is_anim_at_end(m)) {
-        //! While the animation is playing, it is possible for the used object
-        // to unload. This allows you to pick up a vacant or newly loaded object
-        // slot (cloning via fake object).
-        mario_grab_used_object(m);
-        play_sound_if_no_flag(m, SOUND_MARIO_HRMM, MARIO_MARIO_SOUND_PLAYED);
-        m->actionState = 1;
+    m->actionState = 1;
+    if (m->actionArg == 0) {
+        m->actionTimer = 7;
     }
 
-    if (m->actionState == 1) {
-        if (m->heldObj->oInteractionSubtype & INT_SUBTYPE_GRABS_MARIO) {
-            m->marioBodyState->grabPos = GRAB_POS_HEAVY_OBJ;
-            set_mario_animation(m, MARIO_ANIM_GRAB_HEAVY_OBJECT);
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, ACT_HOLD_HEAVY_IDLE, 0);
-            }
-        } else {
-            m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
-            #ifdef OCTOBERTHIRTEEN
-            set_mario_animation(m, MARIO_ANIM_PICK_UP_101295);
-            #else
-            set_mario_animation(m, MARIO_ANIM_PICK_UP_LIGHT_OBJ);
-            #endif
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, ACT_HOLD_IDLE, 0);
-            }
-        }
+    if (m->actionTimer > 0) {
+        m->actionTimer--;
     }
+
+    mario_update_punch_sequence(m);
+    perform_ground_step(m);
+    return FALSE;
+}
 
 s32 act_picking_up(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
