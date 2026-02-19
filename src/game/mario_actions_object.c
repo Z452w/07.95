@@ -24,7 +24,7 @@ u32 endAction = (m->action & ACT_FLAG_MOVING) ? ACT_WALKING : ACT_IDLE;
         return TRUE;
     }
 
-    return FALSE;
+    return set_mario_action(m, endAction, 0);
     }
 
 s32 act_punching(struct MarioState *m) {
