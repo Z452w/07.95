@@ -5,12 +5,12 @@
 
 // 0x09000000
 ALIGNED8 const Texture inside_09000000[] = {
-#include "levels/lll/0.rgba16.inc.c"
+#include "textures/inside/inside_castle_textures.07000.rgba16.inc.c"
 };
 
 // 0x09001000
 ALIGNED8 const Texture inside_09001000[] = {
-#include "levels/lll/0.rgba16.inc.c"
+#include "textures/inside/inside_castle_textures.07000.rgba16.inc.c"
 };
 
 // 0x09002000
@@ -65,12 +65,12 @@ ALIGNED8 const Texture inside_09006800[] = {
 
 // 0x09007000
 ALIGNED8 const Texture inside_09007000[] = {
-#include "textures/inside/inside_castle_textures.07000.rgba16.inc.c"
+#include "textures/spooky/bbh_textures.09000.rgba16.inc.c"
 };
 
 // 0x09008000
 ALIGNED8 const Texture inside_09008000[] = {
-#include "textures/inside/inside_castle_textures.08000.rgba16.inc.c"
+#include "textures/inside/inside_castle_textures.01000.rgba16.inc.c"
 };
 
 // 0x09009000
