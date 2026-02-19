@@ -80,7 +80,6 @@ s16 intro_level_select(void) {
     gCurrSaveFileNum = 4;
     gCurrActNum = 6;
 
-    print_text_centered(160, 140, "1995JUL25");
     print_text_centered(160, 80, "SELECT STAGE");
     print_text_centered(160, 30, "PRESS START BUTTON");
     print_text_fmt_int(40, 60, "%02d", gCurrLevelNum);
