@@ -80,22 +80,22 @@ s16 intro_level_select(void) {
     gCurrSaveFileNum = 4;
     gCurrActNum = 6;
 
+    print_text_centered(160, 140, "1995JUL25");
     print_text_centered(160, 80, "SELECT STAGE");
     print_text_centered(160, 30, "PRESS START BUTTON");
     print_text_fmt_int(40, 60, "%02d", gCurrLevelNum);
     print_text(80, 60, sLevelSelectStageNames[gCurrLevelNum - 1]); // print stage name
 
-#define QUIT_LEVEL_SELECT_COMBO (Z_TRIG | START_BUTTON | L_CBUTTONS | R_CBUTTONS)
+//#define QUIT_LEVEL_SELECT_COMBO (Z_TRIG | START_BUTTON | L_CBUTTONS | R_CBUTTONS)
 
      //start being pressed signals the stage to be started. that is, unless...
     if (gPlayer1Controller->buttonPressed & START_BUTTON) {
         // ... the level select quit combo is being pressed, which uses START. If this
         // is the case, quit the menu instead.
-        if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
-            gDebugLevelSelect = TRUE;
-            return -1;
-        }
-        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+  //      if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
+  //          gDebugLevelSelect = TRUE;
+   //         return -1;
+     //   }
         return gCurrLevelNum;
     }
     return 0;
