@@ -106,33 +106,14 @@ s16 intro_level_select(void) {
  */
 
 s32 intro_regular(void) {
-    s32 level = LEVEL_NONE;
-
-    if (sPlayMarioGreeting < 30) {
-        sPlayMarioGreeting++;
-    }
-
-    print_intro_text();
-
-    if (gPlayer1Controller->buttonPressed & START_BUTTON) {
-        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
-        // calls level ID 100 (or 101 adding level select bool value)
-        // defined in level_intro_mario_head_regular JUMP_IF commands
-        // 100 is File Select - 101 is Level Select
-        level = 100 + gDebugLevelSelect;
-        sPlayMarioGreeting = 0;
-
-        save_file_create_temporary_file();
-    }
-    return level;
+    return retVar = intro_level_select();
 }
 
 /**
  * Game over intro function that handles Mario's game over voice and game start.
  */
 s32 intro_game_over(void) {
-    s32 level = LEVEL_NONE;
-    return level;
+    return retVar = intro_level_select();
 }
 
 /**
@@ -156,10 +137,10 @@ s32 lvl_intro_update(s16 arg, UNUSED s32 unusedArg) {
             retVar = intro_play_its_a_me_mario();
             break;
         case LVL_INTRO_REGULAR:
-            retVar = intro_level_select();
+            retVar = intro_regular();
             break;
         case LVL_INTRO_GAME_OVER:
-            retVar = intro_level_select();
+            retVar = intro_game_over();
             break;
         case LVL_INTRO_LEVEL_SELECT:
             retVar = intro_level_select();
