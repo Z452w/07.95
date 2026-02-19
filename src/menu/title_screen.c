@@ -82,28 +82,29 @@ s16 intro_level_select(void) {
 
     print_text_centered(160, 80, "SELECT STAGE");
     print_text_centered(160, 30, "PRESS START BUTTON");
-    print_text_fmt_int(40, 60, "%2d", gCurrLevelNum);
+    print_text_fmt_int(40, 60, "%02d", gCurrLevelNum);
     print_text(80, 60, sLevelSelectStageNames[gCurrLevelNum - 1]); // print stage name
 
-#define QUIT_LEVEL_SELECT_COMBO (Z_TRIG | START_BUTTON | L_CBUTTONS | R_CBUTTONS)
+//#define QUIT_LEVEL_SELECT_COMBO (Z_TRIG | START_BUTTON | L_CBUTTONS | R_CBUTTONS)
 
     // start being pressed signals the stage to be started. that is, unless...
-    if (gPlayer1Controller->buttonPressed & START_BUTTON) {
+  //  if (gPlayer1Controller->buttonPressed & START_BUTTON) {
         // ... the level select quit combo is being pressed, which uses START. If this
         // is the case, quit the menu instead.
-        if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
-            gDebugLevelSelect = FALSE;
-            return -1;
-        }
-        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
-        return gCurrLevelNum;
-    }
-    return 0;
-}
+    //    if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
+     //       gDebugLevelSelect = FALSE;
+       //     return -1;
+   //     }
+     //   play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+     //   return gCurrLevelNum;
+  //  }
+  //  return 0;
+//}
 
 /**
  * Regular intro function that handles Mario's greeting voice and game start.
  */
+
 s32 intro_regular(void) {
     s32 level = LEVEL_NONE;
 
@@ -155,10 +156,10 @@ s32 lvl_intro_update(s16 arg, UNUSED s32 unusedArg) {
             retVar = intro_play_its_a_me_mario();
             break;
         case LVL_INTRO_REGULAR:
-            retVar = intro_regular();
+            retVar = intro_level_select();
             break;
         case LVL_INTRO_GAME_OVER:
-            retVar = intro_regular();
+            retVar = intro_level_select();
             break;
         case LVL_INTRO_LEVEL_SELECT:
             retVar = intro_level_select();
