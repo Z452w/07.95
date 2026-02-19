@@ -9,8 +9,6 @@
 #include "interaction.h"
 #include "engine/math_util.h"
 
-extern struct Object *mario_find_nearby_object(struct MarioState *m);
-
 void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 endAction) {
     stationary_ground_step(m);
     set_mario_animation(m, animation);
@@ -20,16 +18,14 @@ void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 en
 }
 
 s32 mario_update_punch_sequence(struct MarioState *m) {
-    struct Object *nearbyObj = mario_find_nearby_object(m);
+u32 endAction = (m->action & ACT_FLAG_MOVING) ? ACT_WALKING : ACT_IDLE;
 
-    if (nearbyObj != NULL) {
-        return set_mario_action(m, ACT_PICKING_UP, 0);
+    if (mario_check_object_grab(m)) {
+        return TRUE;
     }
 
-    u32 endAction = (m->action & ACT_FLAG_MOVING) ? ACT_WALKING : ACT_IDLE;
     return set_mario_action(m, endAction, 0);
-}
-
+    }
 
 s32 act_punching(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
@@ -37,7 +33,7 @@ s32 act_punching(struct MarioState *m) {
     }
 
     mario_update_punch_sequence(m);
-    stationary_ground_step(m); 
+    perform_ground_step(m);
     return FALSE;
 }
 
@@ -68,8 +64,12 @@ s32 act_picking_up(struct MarioState *m) {
             }
         } else {
             m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
+            #ifdef OCTOBERTHIRTEEN
             set_mario_animation(m, MARIO_ANIM_PICK_UP_101295);
-                if (is_anim_at_end(m)) {
+            #else
+            set_mario_animation(m, MARIO_ANIM_PICK_UP_LIGHT_OBJ);
+            #endif
+            if (is_anim_at_end(m)) {
                 set_mario_action(m, ACT_HOLD_IDLE, 0);
             }
         }
