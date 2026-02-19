@@ -18,102 +18,18 @@ void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 en
 }
 
 s32 mario_update_punch_sequence(struct MarioState *m) {
-    u32 endAction;
-    s32 animFrame;
+u32 endAction = (m->action & ACT_FLAG_MOVING) ? ACT_WALKING : ACT_IDLE;
 
-    if (m->action & ACT_FLAG_MOVING) {
-        endAction = ACT_WALKING;
-    } else {
-        endAction = ACT_IDLE;
+    if (mario_check_object_grab(m)) {
+        return TRUE;
     }
 
-    switch (m->actionArg) {
-        case 0:
-            play_sound(SOUND_ACTION_THROW, m->marioObj->header.gfx.cameraToObject);
-            // fallthrough
-        case 1:
-            #ifndef OCTOBERTHIRTEEN
-            set_mario_animation(m, MARIO_ANIM_FIRST_PUNCH);
-            if (is_anim_at_end(m)) {
-                m->actionArg = 2;
-            } else {
-                m->actionArg = 1;
-            }
-            #else
-            set_mario_animation(m, MARIO_ANIM_FIRST_PUNCH_101295);
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, endAction, 0);
-            } else {
-                m->actionArg = 1;
-            }
-            #endif
-            if (m->marioObj->header.gfx.animInfo.animFrame >= 2) {
-                if (mario_check_object_grab(m)) {
-                    return TRUE;
-                }
-
-                m->flags |= MARIO_PUNCHING;
-            }
-
-            if (m->actionArg == 2) {
-                m->marioBodyState->punchState = (0 << 6) | 4;
-            }
-            break;
-        #ifndef OCTOBERTHIRTEEN
-        case 2:
-            set_mario_animation(m, MARIO_ANIM_FIRST_PUNCH_FAST);
-
-            if (m->marioObj->header.gfx.animInfo.animFrame <= 0) {
-                m->flags |= MARIO_PUNCHING;
-            }
-
-            if (m->input & INPUT_B_PRESSED) {
-                m->actionArg = 3;
-            }
-
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, endAction, 0);
-            }
-            break;
-        
-        case 3:
-            play_sound(SOUND_ACTION_SPIN, m->marioObj->header.gfx.cameraToObject);
-            // fallthrough
-        case 4:
-            animFrame = set_mario_animation(m, MARIO_ANIM_GROUND_KICK);
-
-            if (animFrame >= 0 && animFrame < 8) {
-                m->flags |= MARIO_KICKING;
-            }
-
-            if (is_anim_at_end(m)) {
-                set_mario_action(m, endAction, 0);
-            } else {
-                m->actionArg = 4;
-            }
-            break;
-        #endif
+    return set_mario_action(m, endAction, 0);
     }
-
-    return FALSE;
-}
 
 s32 act_punching(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
         return drop_and_set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
-    }
-
-    if (m->input & (INPUT_NONZERO_ANALOG | INPUT_A_PRESSED | INPUT_OFF_FLOOR | INPUT_ABOVE_SLIDE)) {
-        return check_common_action_exits(m);
-    }
-
-    m->actionState = 1;
-    if (m->actionArg == 0) {
-        m->actionTimer = 7;
-    }
-
-    if (m->actionTimer > 0) {
-        m->actionTimer--;
     }
 
     mario_update_punch_sequence(m);
