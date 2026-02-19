@@ -35,7 +35,7 @@ ALIGNED8 const Texture inside_09003800[] = {
 
 // 0x09004000
 ALIGNED8 const Texture inside_09004000[] = {
-#include "textures/inside/inside_castle_textures.04000.rgba16.inc.c"
+#include "textures/inside/inside_castle_textures.05000.rgba16.inc.c"
 };
 
 // 0x09004800
