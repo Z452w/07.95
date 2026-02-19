@@ -85,20 +85,20 @@ s16 intro_level_select(void) {
     print_text_fmt_int(40, 60, "%02d", gCurrLevelNum);
     print_text(80, 60, sLevelSelectStageNames[gCurrLevelNum - 1]); // print stage name
 
-//#define QUIT_LEVEL_SELECT_COMBO (Z_TRIG | START_BUTTON | L_CBUTTONS | R_CBUTTONS)
+#define QUIT_LEVEL_SELECT_COMBO (Z_TRIG | START_BUTTON | L_CBUTTONS | R_CBUTTONS)
 
-    // start being pressed signals the stage to be started. that is, unless...
-  //  if (gPlayer1Controller->buttonPressed & START_BUTTON) {
+     //start being pressed signals the stage to be started. that is, unless...
+    if (gPlayer1Controller->buttonPressed & START_BUTTON) {
         // ... the level select quit combo is being pressed, which uses START. If this
         // is the case, quit the menu instead.
-    //    if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
-     //       gDebugLevelSelect = FALSE;
-       //     return -1;
-   //     }
-     //   play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
-     //   return gCurrLevelNum;
-  //  }
-  //  return 0;
+        if (gPlayer1Controller->buttonDown == QUIT_LEVEL_SELECT_COMBO) {
+            gDebugLevelSelect = TRUE;
+            return -1;
+        }
+        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+        return gCurrLevelNum;
+    }
+    return 0;
 }
 
 /**
@@ -106,14 +106,33 @@ s16 intro_level_select(void) {
  */
 
 s32 intro_regular(void) {
-    return retVar = intro_level_select();
+    s32 level = LEVEL_NONE;
+
+    if (sPlayMarioGreeting < 30) {
+        sPlayMarioGreeting++;
+    }
+
+    print_intro_text();
+
+    if (gPlayer1Controller->buttonPressed & START_BUTTON) {
+        play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+        // calls level ID 100 (or 101 adding level select bool value)
+        // defined in level_intro_mario_head_regular JUMP_IF commands
+        // 100 is File Select - 101 is Level Select
+        level = 100 + gDebugLevelSelect;
+        sPlayMarioGreeting = 0;
+
+        save_file_create_temporary_file();
+    }
+    return level;
 }
 
 /**
  * Game over intro function that handles Mario's game over voice and game start.
  */
 s32 intro_game_over(void) {
-    return retVar = intro_level_select();
+    s32 level = LEVEL_NONE;
+    return level;
 }
 
 /**
