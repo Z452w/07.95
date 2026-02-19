@@ -9,6 +9,8 @@
 #include "interaction.h"
 #include "engine/math_util.h"
 
+extern struct Object *mario_find_nearby_object(struct MarioState *m);
+
 void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 endAction) {
     stationary_ground_step(m);
     set_mario_animation(m, animation);
