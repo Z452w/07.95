@@ -99,7 +99,7 @@ s16 intro_level_select(void) {
      //   return gCurrLevelNum;
   //  }
   //  return 0;
-//}
+}
 
 /**
  * Regular intro function that handles Mario's greeting voice and game start.
