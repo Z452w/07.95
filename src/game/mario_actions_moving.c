@@ -555,7 +555,13 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                 } else {
                     //! (Speed Crash) If Mario's speed is more than 2^17.
                     val14 = (s32) (val04 / 4.0f * 0x10000);
-                    set_mario_anim_with_accel(m, MARIO_ANIM_RUNNING, val14);
+                    struct Object *mips = cur_obj_find_nearest_object_with_behavior(bhvMips);
+                    if (mips != NULL && dist_between_objects(m->marioObj, mips) < 501.0f && mips->oAction == 1) {
+                        set_mario_anim_with_accel(m, MARIO_ANIM_CHASING, val14);
+                    } else {
+                        // This handles both being too far away AND Mips being idle
+                        set_mario_anim_with_accel(m, MARIO_ANIM_RUNNING, val14);
+                    }
                     play_step_sound(m, 9, 45);
                     targetPitch = tilt_body_running(m);
 
