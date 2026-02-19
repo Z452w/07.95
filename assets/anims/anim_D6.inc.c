@@ -11,7 +11,7 @@ static const struct Animation anim_D6[] = {
 };
 
 static const u16 anim_D6_indices[] = {
-    125,    1,	/* chn14_3translate x */
+      125,    1,	/* chn14_3translate x */
 	  125,  126,	/* chn14_3 translate y */
 	  125,  251,	/* chn14_3 translate z */
 	    1,    0,	/* chn14_3 rotate x */
