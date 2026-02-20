@@ -68,7 +68,7 @@ static const LevelScript script_func_local_3[] = {
 
 static const LevelScript script_func_local_4[] = {
     OBJECT(/*model*/ MODEL_STAR,  /*pos*/   300,  5550,     0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStar),
-    OBJECT(/*model*/ MODEL_STAR,  /*pos*/ -1836,   560,  3911, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvStar),
+    OBJECT(/*model*/ MODEL_STAR,  /*pos*/ -1840,   560,  3900, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvStar),
     RETURN(),
 };
 
