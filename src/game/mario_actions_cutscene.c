@@ -183,7 +183,7 @@ s32 act_reading_automatic_dialog(struct MarioState *m) {
         enable_time_stop();
     }
     if (m->actionState < 1) {
-        set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_LEFT);
+        set_mario_animation(m, MARIO_ANIM_FIRST_PERSON);
     } else {
         // set mario dialog
         if (m->actionState == 1) {
@@ -609,7 +609,7 @@ s32 act_warp_door_spawn(struct MarioState *m) {
             set_mario_action(m, ACT_IDLE, 0);
         }
     }
-    set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_LEFT);
+    set_mario_animation(m, MARIO_ANIM_FIRST_PERSON);
     stop_and_set_height_to_floor(m);
     return FALSE;
 }
