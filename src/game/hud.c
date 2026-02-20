@@ -165,7 +165,7 @@ static void animate_power_meter_deemphasizing(void) {
 
     if (sPowerMeterHUD.y > 200) {
         sPowerMeterHUD.y = 200;
-        sPowerMeterHUD.animation = POWER_METER_VISIBLE;
+        sPowerMeterHUD.animation = POWER_METER_HIDDEN;
     }
 }
 
@@ -188,7 +188,7 @@ void handle_power_meter_actions(s16 numHealthWedges) {
     // Show power meter if health is not full, less than 8
     if (numHealthWedges < 8 && sPowerMeterStoredHealth == 8
         && sPowerMeterHUD.animation == POWER_METER_HIDDEN) {
-        sPowerMeterHUD.animation = POWER_METER_EMPHASIZED;
+        sPowerMeterHUD.animation = POWER_METER_HIDDEN;
         sPowerMeterHUD.y = 150;
     }
 
@@ -208,8 +208,8 @@ void handle_power_meter_actions(s16 numHealthWedges) {
     // If Mario is swimming, keep power meter visible
     if (gPlayerCameraState->action & ACT_FLAG_SWIMMING) {
         if (sPowerMeterHUD.animation == POWER_METER_HIDDEN
-            || sPowerMeterHUD.animation == POWER_METER_EMPHASIZED) {
-            sPowerMeterHUD.animation = POWER_METER_DEEMPHASIZING;
+            || sPowerMeterHUD.animation == POWER_METER_HIDDEN) {
+            sPowerMeterHUD.animation = POWER_METER_HIDDEN;
             sPowerMeterHUD.y = 150;
         }
         sPowerMeterVisibleTimer = 0;
@@ -221,37 +221,13 @@ void handle_power_meter_actions(s16 numHealthWedges) {
  * or has taken damage and has less than 8 health segments.
  * And calls a power meter animation function depending of the value defined.
  */
-void render_hud_power_meter(void) {
-    s16 shownHealthWedges = gHudDisplay.wedges;
-
-    if (sPowerMeterHUD.animation != POWER_METER_HIDING) {
-        handle_power_meter_actions(shownHealthWedges);
-    }
-
-    if (sPowerMeterHUD.animation == POWER_METER_HIDDEN) {
-        return;
-    }
-
-    switch (sPowerMeterHUD.animation) {
-        case POWER_METER_EMPHASIZED:
-            animate_power_meter_emphasized();
-            break;
-        case POWER_METER_DEEMPHASIZING:
-            animate_power_meter_deemphasizing();
-            break;
-        case POWER_METER_HIDING:
-            animate_power_meter_hiding();
-            break;
-        default:
-            break;
-    }
-
-    render_dl_power_meter(shownHealthWedges);
-
-    sPowerMeterVisibleTimer++;
-}
 
 #define HUD_TOP_Y 210
+
+void render_hud_power_meter(void) {
+    print_text(140, HUD_TOP_Y, "POWER");
+    print_text_fmt_int(150, HUD_TOP_Y -17, "%02d", gHudDisplay.wedges);
+}
 
 /**
  * Renders the amount of lives Mario has.
