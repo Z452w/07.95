@@ -22,7 +22,7 @@ STUB_LEVEL(  "", LEVEL_SSL,              COURSE_SSL,                            
 DEFINE_LEVEL("BATTLE FIELD",   LEVEL_BOB,              COURSE_BOB,      bob,              generic,  15000,    0x08, 0x08, 0x08, _,         sCamBOB)
 STUB_LEVEL(  "",      LEVEL_SL,               COURSE_SL,                                   14000,    0x00, 0x00, 0x00, _,         _)
 STUB_LEVEL(  "",       LEVEL_WDW,              COURSE_WDW,                                  17000,    0x00, 0x00, 0x00, _,         _)
-STUB_LEVEL(  "", LEVEL_JRB,              COURSE_JRB,      jrb,              water,    20000,    0x00, 0x00, 0x00, _,         _)
+STUB_LEVEL(  "", LEVEL_JRB,              COURSE_JRB,                                  20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("BIG WORLD",      LEVEL_THI,              COURSE_THI,      thi,              grass,    20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("CLOCK TOWER",    LEVEL_TTC,              COURSE_TTC,      ttc,              machine,  18000,    0x00, 0x00, 0x00, _,         _)
 STUB_LEVEL(  "", LEVEL_RR,               COURSE_RR,                                   20000,    0x00, 0x00, 0x00, _,         _)
