@@ -61,14 +61,14 @@ static const LevelScript script_func_local_3[] = {
     //OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_09, /*pos*/  1280, 3584,   896, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBulletBillCannon),
     OBJECT(/*model*/ MODEL_NONE,              /*pos*/     0, 3483,     0, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvTowerPlatformGroup),
     #ifdef POWBUILD
-    //OBJECT(/*model*/ MODEL_HOOT,              /*pos*/  2560,  700,  4608, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvHoot),
+    OBJECT(/*model*/ MODEL_HOOT,              /*pos*/  2560,  700,  4608, /*angle*/ 0,    0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvHoot),
     #endif
     RETURN(),
 };
 
 static const LevelScript script_func_local_4[] = {
     OBJECT(/*model*/ MODEL_STAR,  /*pos*/   300,  5550,     0, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStar),
-    //OBJECT(/*model*/ MODEL_STAR,  /*pos*/     0,  3750, -2800, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvStar),
+    OBJECT(/*model*/ MODEL_STAR,  /*pos*/ -1836,   560,  3911, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvStar),
     RETURN(),
 };
 
@@ -101,7 +101,7 @@ const LevelScript level_wf_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_WF_GIANT_POLE,                    wf_geo_000AE0),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_0E,                wf_geo_15),
     LOAD_MODEL_FROM_GEO(MODEL_LEVEL_GEOMETRY_0F,                wf_geo_16),
-    //LOAD_MODEL_FROM_GEO(MODEL_WF_ROTATING_PLATFORM,             wf_geo_0009B8),
+    LOAD_MODEL_FROM_GEO(MODEL_WF_ROTATING_PLATFORM,             wf_geo_0009B8),
     LOAD_MODEL_FROM_GEO(MODEL_WF_SMALL_BOMP,                    wf_geo_000A00),
     LOAD_MODEL_FROM_GEO(MODEL_WF_LARGE_BOMP,                    wf_geo_000A40),
     LOAD_MODEL_FROM_GEO(MODEL_WF_ROTATING_WOODEN_PLATFORM,      wf_geo_000A58),
