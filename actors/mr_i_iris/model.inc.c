@@ -15,17 +15,17 @@ ALIGNED8 static const Texture mr_i_iris_seg6_texture_06002170[] = {
 
 // 0x06002970
 ALIGNED8 static const Texture mr_i_iris_seg6_texture_06002970[] = {
-#include "actors/mr_i_iris/mr_i_iris_mostly_open.rgba16.inc.c"
+#include "actors/mr_i_iris/mr_i_iris_open.rgba16.inc.c"
 };
 
 // 0x06003170
 ALIGNED8 static const Texture mr_i_iris_seg6_texture_06003170[] = {
-#include "actors/mr_i_iris/mr_i_iris_mostly_closed.rgba16.inc.c"
+#include "actors/mr_i_iris/mr_i_iris_open.rgba16.inc.c"
 };
 
 // 0x06003970
 ALIGNED8 static const Texture mr_i_iris_seg6_texture_06003970[] = {
-#include "actors/mr_i_iris/mr_i_iris_closed.rgba16.inc.c"
+#include "actors/mr_i_iris/mr_i_iris_open.rgba16.inc.c"
 };
 
 // 0x06004170 - 0x060041D8
