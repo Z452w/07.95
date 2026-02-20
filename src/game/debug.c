@@ -245,7 +245,7 @@ void print_enemyinfo(void) {
 }
 
 void update_debug_dpadmask(void) {
-    s32 dPadMask = gPlayer1Controller->buttonDown & (U_JPAD | D_JPAD | L_JPAD | R_JPAD);
+    s32 dPadMask = gPlayer4Controller->buttonDown & (U_JPAD | D_JPAD | L_JPAD | R_JPAD);
 
     if (!dPadMask) {
         sDebugInfoDPadUpdID = 0;
@@ -305,10 +305,10 @@ UNUSED static void check_debug_button_seq(void) {
     s16 *buttonArr = sDebugInfoButtonSeq;
     s16 cButtonMask;
 
-    if (!(gPlayer1Controller->buttonDown & L_TRIG)) {
+    if (!(gPlayer4Controller->buttonDown & L_TRIG)) {
         sDebugInfoButtonSeqID = 0;
     } else {
-        if ((s16) (cButtonMask = (gPlayer1Controller->buttonPressed & C_BUTTONS))) {
+        if ((s16) (cButtonMask = (gPlayer4Controller->buttonPressed & C_BUTTONS))) {
             if (buttonArr[sDebugInfoButtonSeqID] == cButtonMask) {
                 sDebugInfoButtonSeqID++;
                 if (buttonArr[sDebugInfoButtonSeqID] == -1) {
@@ -331,12 +331,12 @@ UNUSED static void check_debug_button_seq(void) {
  */
 UNUSED static void try_change_debug_page(void) {
     if (gDebugInfoFlags & DEBUG_INFO_FLAG_DPRINT) {
-        if ((gPlayer1Controller->buttonPressed & L_JPAD)
-            && (gPlayer1Controller->buttonDown & (L_TRIG | R_TRIG))) {
+        if ((gPlayer4Controller->buttonPressed & L_JPAD)
+            && (gPlayer4Controller->buttonDown & (L_TRIG | R_TRIG))) {
             sDebugPage++;
         }
-        if ((gPlayer1Controller->buttonPressed & R_JPAD)
-            && (gPlayer1Controller->buttonDown & (L_TRIG | R_TRIG))) {
+        if ((gPlayer4Controller->buttonPressed & R_JPAD)
+            && (gPlayer4Controller->buttonDown & (L_TRIG | R_TRIG))) {
             sDebugPage--;
         }
         if (sDebugPage >= (DEBUG_PAGE_MAX + 1)) {
@@ -357,12 +357,12 @@ UNUSED static void try_change_debug_page(void) {
 void try_modify_debug_controls(void) {
     s32 sp4;
 
-    if (gPlayer1Controller->buttonPressed & Z_TRIG) {
+    if (gPlayer4Controller->buttonPressed & Z_TRIG) {
         sNoExtraDebug ^= 1;
     }
-    if (!(gPlayer1Controller->buttonDown & (L_TRIG | R_TRIG)) && !sNoExtraDebug) {
+    if (!(gPlayer4Controller->buttonDown & (L_TRIG | R_TRIG)) && !sNoExtraDebug) {
         sp4 = 1;
-        if (gPlayer1Controller->buttonDown & B_BUTTON) {
+        if (gPlayer4Controller->buttonDown & B_BUTTON) {
             sp4 = 100;
         }
 
@@ -384,7 +384,7 @@ void try_modify_debug_controls(void) {
             // we allow the player while in this mode to modify the debug controls. This is
             // so the playtester can adjust enemy behavior and parameters on the fly, since
             // various behaviors try to update their behaviors from gDebugInfo[4] and [5].
-            if (gPlayer1Controller->buttonDown & A_BUTTON) {
+            if (gPlayer4Controller->buttonDown & A_BUTTON) {
                 gDebugInfo[sDebugPage][sDebugSysCursor] =
                     gDebugInfoOverwrite[sDebugPage][sDebugSysCursor];
             } else {
