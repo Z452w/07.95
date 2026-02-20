@@ -25,7 +25,7 @@ const GeoLayout mountain_geo[] = {
       GEO_CLOSE_NODE(),
       GEO_ZBUFFER(0),
       GEO_OPEN_NODE(),
-        //GEO_ASM(0, geo_cannon_circle_base),
+        GEO_ASM(0, geo_cannon_circle_base),
         GEO_ASM(8, AreaMap),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
