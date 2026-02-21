@@ -3,7 +3,7 @@
 /*	Mario texture data.															*/
 /********************************************************************************/
 ALIGNED8 static const Texture m_button_txt[] = {
-#include "actors/mario/m_button_old_txt.rgba16.inc.c"
+#include "actors/mario/m_button_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture m_mark_txt[] = {
