@@ -34,17 +34,6 @@ s32 act_punching(struct MarioState *m) {
 
     mario_update_punch_sequence(m);
     perform_ground_step(m);
-    
-    if (mario_check_object_grab(m)) {
-        mario_grab_used_object(m);
-        m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
-         
-        if (m->action != ACT_PUNCHING) {
-            return TRUE; 
-        } else {
-            return set_mario_action(m, ACT_PICKING_UP_LIGHT_OBJ, 0);
-        }
-    }
     return FALSE;
 }
 
