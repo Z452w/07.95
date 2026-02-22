@@ -779,15 +779,12 @@ static s32 act_water_shocked(struct MarioState *m) {
 static s32 act_drowning(struct MarioState *m) {
     switch (m->actionState) {
         case 0:
-            set_mario_animation(m, MARIO_ANIM_DROWNING_PART1);
-            m->marioBodyState->eyeState = MARIO_EYES_HALF_CLOSED;
-            if (is_anim_at_end(m)) {
-                m->actionState = 1;
+            set_mario_action(m, ACT_DROWNING, 1);
             }
             break;
 
         case 1:
-            set_mario_animation(m, MARIO_ANIM_DROWNING_PART2);
+            set_mario_animation(m, MARIO_ANIM_WATER_DYING);
             m->marioBodyState->eyeState = MARIO_EYES_DEAD;
             if (m->marioObj->header.gfx.animInfo.animFrame == 30) {
                 level_trigger_warp(m, WARP_OP_DEATH);
