@@ -20,42 +20,8 @@ static Vtx vtx_star[] = {
 };
 
 /********************************************************************************/
-/*	Texture data of star coin.													*/
+/*	Texture data of mstar.													*/
 /********************************************************************************/
-#ifdef POWBUILD
-ALIGNED8 static const Texture star_coin1_txt[] = {
-#include "actors/star/star_coin1_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin2_txt[] = {
-#include "actors/star/star_coin2_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin3_txt[] = {
-#include "actors/star/star_coin3_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin4_txt[] = {
-#include "actors/star/star_coin4_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin5_txt[] = {
-#include "actors/star/star_coin5_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin6_txt[] = {
-#include "actors/star/star_coin6_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin7_txt[] = {
-#include "actors/star/star_coin7_txt.rgba16.inc.c"
-};
-
-ALIGNED8 static const Texture star_coin8_txt[] = {
-#include "actors/star/star_coin8_txt.rgba16.inc.c"
-};
-
-#else
 ALIGNED8 static const Texture star_coin1_txt[] = {
 #include "actors/star/mstar1.rgba16.inc.c"
 };
@@ -88,42 +54,40 @@ ALIGNED8 static const Texture star_coin8_txt[] = {
 #include "actors/star/mstar8.rgba16.inc.c"
 };
 
-#endif
-
-#ifndef OCTOBERTHIRTEEN
 /********************************************************************************/
 /*	Texture data of star dust.													*/
 /********************************************************************************/
+#ifndef OCTOBERTHIRTEEN
 ALIGNED8 static const Texture star_dust1_txt[] = {
-#include "actors/star/star_dust1_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust2_txt[] = {
-#include "actors/star/star_dust2_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust3_txt[] = {
-#include "actors/star/star_dust3_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust4_txt[] = {
-#include "actors/star/star_dust4_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust5_txt[] = {
-#include "actors/star/star_dust5_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust6_txt[] = {
-#include "actors/star/star_dust6_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust7_txt[] = {
-#include "actors/star/star_dust7_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture star_dust8_txt[] = {
-#include "actors/star/star_dust8_txt.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 #endif
 /********************************************************************************/
@@ -214,42 +178,33 @@ static Gfx gfx_star_dust[] = {
 
 Gfx RCP_star_dust1[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust1_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust2[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust2_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust3[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust3_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust4[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust4_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust5[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust5_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust6[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust6_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust7[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust7_txt),
 	gsSPBranchList(gfx_star_dust)
 };
 Gfx RCP_star_dust8[] = {
 	gsDPPipeSync(),
-	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust8_txt),
 	gsSPBranchList(gfx_star_dust)
 };
-#endif
