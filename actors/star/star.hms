@@ -12,7 +12,6 @@ extern Gfx  RCP_star6[];
 extern Gfx  RCP_star7[];
 extern Gfx  RCP_star8[];
 
-#ifndef OCTOBERTHIRTEEN
 extern Gfx  RCP_star_dust1[];
 extern Gfx  RCP_star_dust2[];
 extern Gfx  RCP_star_dust3[];
@@ -21,7 +20,7 @@ extern Gfx  RCP_star_dust5[];
 extern Gfx  RCP_star_dust6[];
 extern Gfx  RCP_star_dust7[];
 extern Gfx  RCP_star_dust8[];
-#endif
+
 
 /********************************************************************************/
 /*	Hierarchy data of mstar.												*/
@@ -44,7 +43,6 @@ Hierarchy RCP_HmsItemStar[] = {
 	hmsExit()
 };
 
-#ifndef OCTOBERTHIRTEEN
 /********************************************************************************/
 /*	Hierarchy data of star dust.												*/
 /********************************************************************************/
@@ -65,4 +63,3 @@ Hierarchy RCP_HmsItemStarDust[] = {
 	hmsEnd()
 	hmsExit()
 };
-#endif
