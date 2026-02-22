@@ -1,21 +1,21 @@
 // 0x07006000 - 0x07006800
 ALIGNED8 static const u8 inside_castle_seg7_texture_07006000[] = {
-#include "levels/castle_inside/8.rgba16.inc.c"
+#include "levels/castle_inside/12.rgba16.inc.c"
 };
 
 // 0x07006800 - 0x07007000
 ALIGNED8 static const u8 inside_castle_seg7_texture_07006800[] = {
-#include "levels/castle_inside/9.rgba16.inc.c"
+#include "levels/castle_inside/13.rgba16.inc.c"
 };
 
 // 0x07007000 - 0x07007800
 ALIGNED8 static const u8 inside_castle_seg7_texture_07007000[] = {
-#include "levels/castle_inside/10.rgba16.inc.c"
+#include "levels/castle_inside/14.rgba16.inc.c"
 };
 
 // 0x07007800 - 0x07008000
 ALIGNED8 static const u8 inside_castle_seg7_texture_07007800[] = {
-#include "levels/castle_inside/11.rgba16.inc.c"
+#include "levels/castle_inside/15.rgba16.inc.c"
 };
 
 // 0x07008000 - 0x07008800
