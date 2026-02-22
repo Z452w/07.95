@@ -28,11 +28,6 @@
 
 #define seqPort(a,b,c,d) WARP_NODE(a,b,c,d,WARP_NO_CHECKPOINT)
 
-static const LevelScript script_func_local_1[] = {
-    OBJECT(/*model*/ MODEL_STAR,  /*pos*/ -6094, 8500, -6094, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvStar),
-    OBJECT(/*model*/ MODEL_HOOT,  /*pos*/ -1500,    0,  4000, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvHoot),
-};
-
 const LevelScript level_castle_entry[] = {
 
     INIT_LEVEL(),
