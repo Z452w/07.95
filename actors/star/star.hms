@@ -12,15 +12,6 @@ extern Gfx  RCP_star6[];
 extern Gfx  RCP_star7[];
 extern Gfx  RCP_star8[];
 
-extern Gfx  RCP_star_dust1[];
-extern Gfx  RCP_star_dust2[];
-extern Gfx  RCP_star_dust3[];
-extern Gfx  RCP_star_dust4[];
-extern Gfx  RCP_star_dust5[];
-extern Gfx  RCP_star_dust6[];
-extern Gfx  RCP_star_dust7[];
-extern Gfx  RCP_star_dust8[];
-
 
 /********************************************************************************/
 /*	Hierarchy data of mstar.												*/
@@ -44,21 +35,13 @@ Hierarchy RCP_HmsItemStar[] = {
 };
 
 /********************************************************************************/
-/*	Hierarchy data of star dust.												*/
+/*	Once hierarchy data of the late star dust.												*/
 /********************************************************************************/
 Hierarchy RCP_HmsItemStarDust[] = {
 	hmsGroup()
 	hmsBegin()
-		hmsSelect(8, ControlShapeAnime)
+		hmsSelect(0, ControlShapeAnime)
 		hmsBegin()
-			hmsGfx(RM_SPRITE, RCP_star_dust1)
-			hmsGfx(RM_SPRITE, RCP_star_dust2)
-			hmsGfx(RM_SPRITE, RCP_star_dust3)
-			hmsGfx(RM_SPRITE, RCP_star_dust4)
-			hmsGfx(RM_SPRITE, RCP_star_dust5)
-			hmsGfx(RM_SPRITE, RCP_star_dust6)
-			hmsGfx(RM_SPRITE, RCP_star_dust7)
-			hmsGfx(RM_SPRITE, RCP_star_dust8)
 		hmsEnd()
 	hmsEnd()
 	hmsExit()
