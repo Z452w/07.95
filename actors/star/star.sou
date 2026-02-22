@@ -89,6 +89,8 @@ ALIGNED8 static const Texture star_coin8_txt[] = {
 };
 
 #endif
+
+#ifndef OCTOBERTHIRTEEN
 /********************************************************************************/
 /*	Texture data of star dust.													*/
 /********************************************************************************/
@@ -123,7 +125,7 @@ ALIGNED8 static const Texture star_dust7_txt[] = {
 ALIGNED8 static const Texture star_dust8_txt[] = {
 #include "actors/star/star_dust8_txt.rgba16.inc.c"
 };
-
+#endif
 /********************************************************************************/
 /*	Graphic display list of star coin.											*/
 /********************************************************************************/
@@ -187,6 +189,7 @@ Gfx RCP_star8[] = {
 	gsSPBranchList(gfx_star)
 };
 
+#ifndef OCTOBERTHIRTEEN
 /********************************************************************************/
 /*	Graphic display list of star dust.											*/
 /********************************************************************************/
@@ -249,3 +252,4 @@ Gfx RCP_star_dust8[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, star_dust8_txt),
 	gsSPBranchList(gfx_star_dust)
 };
+#endif
