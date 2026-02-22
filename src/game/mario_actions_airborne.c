@@ -713,60 +713,7 @@ s32 act_steep_jump(struct MarioState *m) {
 }
 
 s32 act_ground_pound(struct MarioState *m) {
-    u32 stepResult;
-    f32 yOffset;
-
-    if (m->actionState == 0) {
-        if (m->vel[1] > 0.0f) {
-            m->vel[1] = 0.0f;
-        }
-
-        if (m->actionTimer < 10) {
-            yOffset = 20 - 2 * m->actionTimer;
-            if (m->pos[1] + yOffset + 160.0f < m->ceilHeight) {
-                m->pos[1] += yOffset;
-                m->peakHeight = m->pos[1];
-                vec3f_copy(m->marioObj->header.gfx.pos, m->pos);
-            }
-        }
-
-        stepResult = perform_air_step(m, 0);
-        mario_set_forward_vel(m, 0.0f);
-        set_mario_animation(m, m->actionArg == 0 ? MARIO_ANIM_START_GROUND_POUND
-                                                 : MARIO_ANIM_TRIPLE_JUMP_GROUND_POUND);
-
-        if (m->actionTimer == 0) {
-            play_sound(SOUND_ACTION_THROW, m->marioObj->header.gfx.cameraToObject);
-            play_sound(SOUND_MARIO_HAUGH, m->marioObj->header.gfx.cameraToObject);
-        }
-
-        m->actionTimer += 1;
-
-        if (m->actionTimer >= m->marioObj->header.gfx.animInfo.curAnim->loopEnd + 4
-            || stepResult == AIR_STEP_LANDED) {
-            m->actionState = 1;
-        }
-    } else {
-        set_mario_animation(m, MARIO_ANIM_GROUND_POUND);
-
-        stepResult = perform_air_step(m, 0);
-        if (stepResult == AIR_STEP_LANDED) {
-            play_sound(SOUND_ACTION_UNK3C, m->marioObj->header.gfx.cameraToObject);
-            if (!check_fall_damage(m, ACT_HARD_BACKWARD_GROUND_KB)) {
-                set_mario_action(m, ACT_GROUND_POUND_LAND, 0);
-            }
-            set_camera_shake_from_hit(SHAKE_GROUND_POUND);
-        } else if (stepResult == AIR_STEP_HIT_WALL) {
-            mario_set_forward_vel(m, -16.0f);
-            if (m->vel[1] > 0.0f) {
-                m->vel[1] = 0.0f;
-            }
-
-            set_mario_action(m, ACT_BACKWARD_AIR_KB, 0);
-        }
-    }
-
-    return FALSE;
+    return set_mario_action(m, ACT_CROUCHING, 0);
 }
 
 s32 act_burning_jump(struct MarioState *m) {
