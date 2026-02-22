@@ -11,7 +11,7 @@
 .word  0x74757C24               /* Checksum 2 */
 .word  0x00000000               /* Unknown */
 .word  0x00000000               /* Unknown */
-.ascii "ULTRA 64 MARIO BROS "   /* Internal ROM name */
+.ascii "Ultra 64 MARIO Bros "   /* Internal ROM name */
 .word  0x00000000               /* Unknown */
 .word  0x0000004E               /* Cartridge */
 .ascii "UM"                     /* Cartridge ID */
