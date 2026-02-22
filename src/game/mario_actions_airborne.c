@@ -1134,7 +1134,7 @@ s32 act_lava_boost(struct MarioState *m) {
             break;
     }
 
-    set_mario_animation(m, MARIO_ANIM_FIRE_LAVA_BURN);
+    set_mario_animation(m, MARIO_ANIM_RUNNING);
     if ((m->area->terrainType & TERRAIN_MASK) != TERRAIN_SNOW && m->vel[1] > 0.0f) {
         m->particleFlags |= PARTICLE_FIRE;
         if (m->actionState == 0) {
