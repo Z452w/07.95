@@ -11,10 +11,8 @@ extern Gfx RCP_mainroom_doorA[];
 extern Gfx RCP_mainroom_doorB[];
 extern Gfx RCP_mainroom_doorC[];
 extern Gfx RCP_mainroom_doorD[];
-#ifdef boodoor
 extern Gfx RCP_NearTeresaDoor[];
 extern Gfx RCP_FarTeresaDoor[];
-#endif
 
 /* ====================================================================================	
 		: RCP_HmsMainDoor
@@ -184,7 +182,7 @@ Hierarchy RCP_HmsMainroomDoorD[] = {
  hmsEnd()
  hmsExit()
 };
-#ifdef boodoor
+
 /* ====================================================================================	
 		: RCP_HmsTeresaDoor
 ======================================================================================= */
@@ -213,4 +211,3 @@ Hierarchy RCP_HmsTeresaDoor[] = {
  hmsEnd()
  hmsExit()
 };
-#endif
