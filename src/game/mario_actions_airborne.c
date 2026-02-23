@@ -713,7 +713,7 @@ s32 act_steep_jump(struct MarioState *m) {
 }
 
 s32 act_ground_pound(struct MarioState *m) {
-    set_mario_action(m, ACT_HOLD_JUMP, 0);
+    return set_mario_action(m, ACT_HOLD_JUMP, 0);
 }
 
 s32 act_burning_jump(struct MarioState *m) {
