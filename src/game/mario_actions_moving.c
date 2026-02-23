@@ -1553,7 +1553,6 @@ s32 mario_execute_moving_action(struct MarioState *m) {
         case ACT_HOLD_BUTT_SLIDE:          cancel = act_hold_butt_slide(m);          break;
         case ACT_HOLD_STOMACH_SLIDE:       cancel = act_hold_stomach_slide(m);       break;
         case ACT_DIVE_SLIDE:               cancel = act_dive_slide(m);               break;
-        case ACT_MOVE_PUNCHING:            cancel = act_move_punching(m);            break;
         case ACT_CROUCH_SLIDE:             cancel = act_crouch_slide(m);             break;
         case ACT_HARD_BACKWARD_GROUND_KB:  cancel = act_hard_backward_ground_kb(m);  break;
         case ACT_HARD_FORWARD_GROUND_KB:   cancel = act_hard_forward_ground_kb(m);   break;
