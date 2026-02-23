@@ -25,15 +25,10 @@ s32 act_punching(struct MarioState *m) {
     if (mario_check_object_grab(m)) {
         mario_grab_used_object(m);
         m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
-        return TRUE; 
-    }
-
-    if (m->heldObj != NULL) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
     }
-    
-    perform_ground_step(m);
-    return FALSE;
+
+    return set_mario_action(m, ACT_IDLE, 0); 
 }
 
 s32 act_picking_up(struct MarioState *m) {
