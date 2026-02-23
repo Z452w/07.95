@@ -28,14 +28,6 @@ extern const Collision castle_inside_collision[];
 extern const u8 castle_inside_collision_rooms[];
 extern const Collision inside_castle_seg7_collision_floor_trap[]; //trap door
 
-/*  don't forget to fully remove these later:
-
-extern const Collision inside_castle_seg7_collision_star_door[];
-extern const Collision inside_castle_seg7_collision_water_level_pillar[];
-extern const Trajectory *const inside_castle_seg7_trajectory_mips[];
-
-*/
-
 // script
 extern const LevelScript level_castle_inside_entry[];
 
