@@ -455,6 +455,8 @@ s32 analog_stick_held_back(struct MarioState *m) {
 
 s32 check_ground_dive_or_punch(struct MarioState *m) {
     UNUSED u8 filler[4];
+
+    if (m->input & INPUT_B_PRESSED) {
         return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
     }
 
