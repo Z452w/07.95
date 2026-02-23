@@ -404,10 +404,6 @@ s32 act_side_flip(struct MarioState *m) {
     return set_mario_action(m, ACT_JUMP, 0);
 }
 
-s32 act_wall_kick_air(struct MarioState *m) {
-    return FALSE;
-}
-
 s32 act_twirling(struct MarioState *m) {
     s16 startTwirlYaw = m->twirlYaw;
     s16 yawVelTarget;
@@ -788,9 +784,6 @@ s32 act_thrown_forward(struct MarioState *m) {
 }
 
 s32 act_soft_bonk(struct MarioState *m) {
-    if (check_wall_kick(m)) {
-        return TRUE;
-    }
 
     play_sound_if_no_flag(m, SOUND_MARIO_HAUGH, MARIO_MARIO_SOUND_PLAYED);
 
@@ -1293,7 +1286,6 @@ s32 mario_execute_airborne_action(struct MarioState *m) {
         case ACT_HOLD_JUMP:            cancel = act_hold_jump(m);            break;
         case ACT_HOLD_FREEFALL:        cancel = act_hold_freefall(m);        break;
         case ACT_SIDE_FLIP:            cancel = act_side_flip(m);            break;
-        case ACT_WALL_KICK_AIR:        cancel = act_wall_kick_air(m);        break;
         case ACT_TWIRLING:             cancel = act_twirling(m);             break;
         case ACT_WATER_JUMP:           cancel = act_water_jump(m);           break;
         case ACT_HOLD_WATER_JUMP:      cancel = act_hold_water_jump(m);      break;
