@@ -20,10 +20,6 @@
 #define LIGHT_X 0
 #define LIGHT_Y 0
 #define LIGHT_Z 127
-#else
-//#define LIGHT_X 0
-//#define LIGHT_Y 0
-//#define LIGHT_Z 127
 #endif
 
 #define	SCALE	4
