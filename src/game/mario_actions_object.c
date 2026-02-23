@@ -28,8 +28,13 @@ s32 act_punching(struct MarioState *m) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
     }
 
-    return set_mario_action(m, ACT_IDLE, 0); 
+    if (m->forwardVel != 0.0f) {
+        return set_mario_action(m, ACT_WALKING, 0);
+    } else {
+        return set_mario_action(m, ACT_IDLE, 0);
+    }
 }
+
 
 s32 act_picking_up(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
