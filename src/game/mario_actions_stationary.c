@@ -46,10 +46,6 @@ s32 check_common_idle_cancels(struct MarioState *m) {
         return set_mario_action(m, ACT_WALKING, 0);
     }
 
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 0);
-    }
-
     if (m->input & INPUT_Z_DOWN) {
         return set_mario_action(m, ACT_START_CROUCHING, 0);
     }
@@ -272,10 +268,6 @@ s32 act_standing_against_wall(struct MarioState *m) {
         return set_mario_action(m, ACT_FIRST_PERSON, 0);
     }
 
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 0);
-    }
-
     set_mario_animation(m, MARIO_ANIM_STAND_AGAINST_WALL);
     stationary_ground_step(m);
     return FALSE;
@@ -309,10 +301,6 @@ s32 act_crouching(struct MarioState *m) {
     if (m->input & INPUT_NONZERO_ANALOG) {
         return set_mario_action(m, ACT_START_CRAWLING, 0);
     }
-
-    /*if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 0);
-    }*/
 
     stationary_ground_step(m);
     set_mario_animation(m, MARIO_ANIM_CROUCHING);
@@ -361,10 +349,6 @@ s32 act_braking_stop(struct MarioState *m) {
 
     if (m->input & INPUT_OFF_FLOOR) {
         return set_mario_action(m, ACT_FREEFALL, 0);
-    }
-
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 0);
     }
 
     if (!(m->input & INPUT_FIRST_PERSON)
@@ -543,10 +527,6 @@ s32 check_common_landing_cancels(struct MarioState *m, u32 action) {
 
     if (m->input & (INPUT_NONZERO_ANALOG | INPUT_A_PRESSED | INPUT_OFF_FLOOR | INPUT_ABOVE_SLIDE)) {
         return check_common_action_exits(m);
-    }
-
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 0);
     }
 
     return FALSE;
