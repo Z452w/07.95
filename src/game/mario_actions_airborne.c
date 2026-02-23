@@ -77,13 +77,6 @@ s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
     return FALSE;
 }
 
-s32 check_dive_in_air(struct MarioState *m) {
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_DIVE, 0);
-    }
-    return FALSE;
-}
-
 s32 check_horizontal_wind(struct MarioState *m) {
     struct Surface *floor;
     f32 speed;
@@ -374,10 +367,6 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
 }
 
 s32 act_jump(struct MarioState *m) {
-    if (check_dive_in_air(m)) {
-        return FALSE;
-    }
-
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
     common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_SINGLE_JUMP,
                            AIR_STEP_CHECK_LEDGE_GRAB | AIR_STEP_CHECK_HANG);
