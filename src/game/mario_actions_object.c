@@ -28,7 +28,7 @@ s32 act_punching(struct MarioState *m) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
     }
 
-    animated_stationary_ground_step(m);
+    stationary_ground_step(m);
     return FALSE;
 }
 
