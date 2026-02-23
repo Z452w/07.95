@@ -46,34 +46,6 @@ s32 lava_boost_on_wall(struct MarioState *m) {
 }
 
 s32 check_fall_damage(struct MarioState *m, u32 hardFallAction) {
-    f32 fallHeight;
-    f32 damageHeight;
-
-    fallHeight = m->peakHeight - m->pos[1];
-
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma GCC diagnostic ignored "-Wtautological-constant-out-of-range-compare"
-#elif defined(__GNUC__)
-#pragma GCC diagnostic ignored "-Wtype-limits"
-#endif
-
-    damageHeight = 1000.0f;
-
-#pragma GCC diagnostic pop
-
-    if (m->action != ACT_TWIRLING && m->floor->type != SURFACE_BURNING) {
-        if (m->vel[1] < -55.0f) {
-            if (fallHeight > 2000.0f) {
-                m->hurtCounter += 16;
-                return drop_and_set_mario_action(m, hardFallAction, 4);
-            } else if (fallHeight > damageHeight && !mario_floor_is_slippery(m)) {
-                m->hurtCounter += 8;
-                m->squishTimer = 30;
-            }
-        }
-    }
-
     return FALSE;
 }
 
@@ -374,7 +346,7 @@ s32 act_jump(struct MarioState *m) {
 }
 
 s32 act_double_jump(struct MarioState *m) {
-    set_mario_action(m, ACT_JUMP, 0);
+    return set_mario_action(m, ACT_JUMP, 0);
 }
 
 s32 act_freefall(struct MarioState *m) {
@@ -429,13 +401,10 @@ s32 act_hold_freefall(struct MarioState *m) {
 }
 
 s32 act_side_flip(struct MarioState *m) {
-    set_mario_action(m, ACT_JUMP, 0);
+    return set_mario_action(m, ACT_JUMP, 0);
 }
 
 s32 act_wall_kick_air(struct MarioState *m) {
-
-    play_mario_jump_sound(m);
-    common_air_action_step(m, ACT_JUMP_LAND, MARIO_ANIM_SLIDEJUMP, AIR_STEP_CHECK_LEDGE_GRAB);
     return FALSE;
 }
 
@@ -453,15 +422,7 @@ s32 act_twirling(struct MarioState *m) {
     m->twirlYaw += m->angleVel[1];
 
     switch (m->actionArg) {
-        //case 0:
-           // set_mario_animation(m, MARIO_ANIM_DOUBLE_JUMP_RISE);
-         //   play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
-          //  if (m->vel[1] < 0.0f) {
-          //      m->actionArg = 1;
-          //  }
-           // break;
-
-        case 0:
+          case 0:
             set_mario_animation(m, MARIO_ANIM_START_TWIRL);
             if (is_anim_past_end(m)) {
                 m->actionArg = 1;
@@ -473,11 +434,7 @@ s32 act_twirling(struct MarioState *m) {
             break;
     }
 
-    //if (startTwirlYaw > m->twirlYaw) {
-       // play_sound(SOUND_ACTION_TWIRL, m->marioObj->header.gfx.cameraToObject);
-   // }
-
-    update_lava_boost_or_twirling(m);
+      update_lava_boost_or_twirling(m);
 
     switch (perform_air_step(m, 0)) {
         case AIR_STEP_LANDED:
