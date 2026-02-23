@@ -453,16 +453,6 @@ s32 analog_stick_held_back(struct MarioState *m) {
     return intendedDYaw < -0x471C || intendedDYaw > 0x471C;
 }
 
-s32 check_ground_dive_or_punch(struct MarioState *m) {
-    UNUSED u8 filler[4];
-
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
-    }
-
-    return FALSE;
-}
-
 s32 begin_braking_action(struct MarioState *m) {
     mario_drop_held_object(m);
 
@@ -691,10 +681,6 @@ s32 act_walking(struct MarioState *m) {
         return set_jump_from_landing(m);
     }
 
-    if (check_ground_dive_or_punch(m)) {
-        return TRUE;
-    }
-
     if (m->input & INPUT_UNKNOWN_5) {
         return begin_braking_action(m);
     }
@@ -734,45 +720,6 @@ s32 act_walking(struct MarioState *m) {
     }
 
     check_ledge_climb_down(m);
-    return FALSE;
-}
-
-s32 act_move_punching(struct MarioState *m) {
-    if (should_begin_sliding(m)) {
-        return set_mario_action(m, ACT_BEGIN_SLIDING, 0);
-    }
-
-    if (m->input & INPUT_A_PRESSED) {
-        return set_mario_action(m, ACT_JUMP, 0);
-    }
-
-    m->actionState = 1;
-
-    if (m->forwardVel == 0.0f && m->actionArg < 2 && m->controller->stickMag < 5.0f) {
-        m->actionArg = 5;
-    }
-
-    if (m->actionArg != 5)
-
-    if (m->forwardVel >= 0.0f) {
-        apply_slope_decel(m, 0.5f);
-    } else {
-        if ((m->forwardVel += 8.0f) >= 0.0f) {
-            m->forwardVel = 0.0f;
-        }
-        apply_slope_accel(m);
-    }
-
-    switch (perform_ground_step(m)) {
-        case GROUND_STEP_LEFT_GROUND:
-            set_mario_action(m, ACT_FREEFALL, 0);
-            break;
-
-        case GROUND_STEP_NONE:
-            if (m->forwardVel != 0.0f || m->actionArg == 5)
-                m->particleFlags |= PARTICLE_DUST;
-    }
-
     return FALSE;
 }
 
@@ -944,10 +891,6 @@ s32 act_braking(struct MarioState *m) {
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 
-    if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_MOVE_PUNCHING, 0);
-    }
-
     switch (perform_ground_step(m)) {
         case GROUND_STEP_LEFT_GROUND:
             set_mario_action(m, ACT_FREEFALL, 0);
@@ -1046,10 +989,6 @@ s32 act_crawling(struct MarioState *m) {
 
     if (m->input & INPUT_A_PRESSED) {
         return set_jumping_action(m, ACT_JUMP, 0);
-    }
-
-    if (check_ground_dive_or_punch(m)) {
-        return TRUE;
     }
 
     if (m->input & INPUT_UNKNOWN_5) {
