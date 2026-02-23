@@ -22,15 +22,11 @@ s32 act_punching(struct MarioState *m) {
         if (mario_check_object_grab(m)) {
             return TRUE;
                 }
-
         }
 
     m->marioBodyState->punchState = (0 << 6) | 4;
     
     stationary_ground_step(m);
-    if (is_anim_at_end(m)) {
-    set_mario_action(m, endAction, 0);
-    }
     return FALSE;
 }
 
