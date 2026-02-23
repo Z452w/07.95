@@ -42,17 +42,11 @@ static const LevelScript script_func_local_2[] = {
     OBJECT(/*model*/ MODEL_LLL_DRAWBRIDGE_PART,                /*pos*/ -1919,  307,  3648, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLDrawbridgeSpawner),
     OBJECT(/*model*/ MODEL_LLL_ROTATING_BLOCK_FIRE_BARS,       /*pos*/ -2694,  307, -1795, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLRotatingBlockWithFireBars),
     OBJECT(/*model*/ MODEL_LLL_ROTATING_HEXAGONAL_RING,        /*pos*/     0,    0,     0, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLRotatingHexagonalRing),
-    // OBJECT(/*model*/ MODEL_LLL_SINKING_RECTANGULAR_PLATFORM,   /*pos*/  3968,    0,  1408, /*angle*/ 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLSinkingRectangularPlatform),
-    // OBJECT(/*model*/ MODEL_LLL_SINKING_RECTANGULAR_PLATFORM,   /*pos*/ -5759,    0,  3072, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLSinkingRectangularPlatform),
-    // OBJECT(/*model*/ MODEL_LLL_SINKING_RECTANGULAR_PLATFORM,   /*pos*/  2816,    0,   512, /*angle*/ 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLSinkingRectangularPlatform),
     OBJECT(/*model*/ MODEL_LLL_SINKING_RECTANGULAR_PLATFORM,   /*pos*/ -1791,    0, -3385, /*angle*/ 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLSinkingRectangularPlatform),
-    // OBJECT(/*model*/ MODEL_LLL_SINKING_SQUARE_PLATFORMS,       /*pos*/  3840,    0, -3199, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLSinkingSquarePlatforms),
     OBJECT(/*model*/ MODEL_LLL_TILTING_SQUARE_PLATFORM,        /*pos*/   922, -153,  2150, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLTiltingInvertedPyramid),
     OBJECT(/*model*/ MODEL_LLL_TILTING_SQUARE_PLATFORM,        /*pos*/  1741, -153,  1741, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLTiltingInvertedPyramid),
     OBJECT(/*model*/ MODEL_LLL_TILTING_SQUARE_PLATFORM,        /*pos*/  1741, -153,  2560, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLTiltingInvertedPyramid),
-    // OBJECT(/*model*/ MODEL_LLL_TILTING_SQUARE_PLATFORM,        /*pos*/  2099, -153,  -306, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLTiltingInvertedPyramid),
     OBJECT(/*model*/ MODEL_NONE,                               /*pos*/  0,     194, -4860, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLTumblingBridge),
-    // OBJECT(/*model*/ MODEL_NONE,                               /*pos*/ -5119,  102,  1024, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLBowserPuzzle),
     RETURN(),
 };
 
@@ -63,21 +57,13 @@ static const LevelScript script_func_local_3[] = {
 };
 
 static const LevelScript script_func_local_4[] = {
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/ -3199,  307,  3456, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
-    //OBJECT(/*model*/ MODEL_BULLY_BOSS,      /*pos*/  3372, 2234, -2906, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvBigBullyWithMinions),
-    OBJECT(/*model*/ MODEL_BULLY,           /*pos*/ -3363,  307,  -474, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallBully),
-    OBJECT(/*model*/ MODEL_BULLY,           /*pos*/   -20,  307, -3666, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallBully),
-    // OBJECT(/*model*/ MODEL_BULLY,           /*pos*/  6813,  307,  1613, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallBully),
-    // OBJECT(/*model*/ MODEL_BULLY,           /*pos*/  7168,  307,   998, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallBully),
-    OBJECT(/*model*/ MODEL_BULLY,           /*pos*/ -3332,  307,   522, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallBully),
-    OBJECT(/*model*/ MODEL_BULLY,           /*pos*/    -0,  307,  3712, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallBully),
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/   500,    2,  5000, /*angle*/ 0, 270, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/  -700,    2,  4500, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/ -6300,    2,  2625, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
-    // OBJECT(/*model*/ MODEL_NONE,            /*pos*/ -3280,    2, -4854, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/  4417,    2,   479, /*angle*/ 0, 315, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/  3909,    2, -1083, /*angle*/ 0, 315, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
-    OBJECT(/*model*/ MODEL_NONE,            /*pos*/  3459,    2,  -601, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBouncingFireball),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/ -3199,  307,  3456, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/     0,  307,  3722, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/ -3604,  307,   602, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/ -3110,  307,    70, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/ -3604,  307,  -539, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/     0,  307, -3558, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
+    OBJECT(/*model*/ MODEL_NONE,           /*pos*/     0,  595,     7, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
     RETURN(),
 };
 
