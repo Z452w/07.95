@@ -18,13 +18,16 @@ void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 en
 }
 
 s32 act_punching(struct MarioState *m) {
-    if (m->marioObj->header.gfx.animInfo.animFrame >= 0) {
         if (mario_check_object_grab(m)) {
             return TRUE;
-                }
+            mario_grab_used_object(m);
+        m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
+        if (m->action == ACT_PICKING_UP) {
+            return TRUE;
+        }
         }
 
-    m->marioBodyState->punchState = (0 << 6) | 4;
+    return m->marioBodyState->punchState = (0 << 6) | 4;
     
     stationary_ground_step(m);
     return FALSE;
