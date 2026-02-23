@@ -17,22 +17,23 @@ void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 en
     }
 }
 
-s32 mario_update_punch_sequence(struct MarioState *m) {
-u32 endAction = (m->action & ACT_FLAG_MOVING) ? ACT_WALKING : ACT_IDLE;
-
-    if (mario_check_object_grab(m)) {
-        return TRUE;
-    }
-
-    return set_mario_action(m, endAction, 0);
-    }
-
 s32 act_punching(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
         return drop_and_set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }
 
-    mario_update_punch_sequence(m);
+    if (mario_check_object_grab(m)) {
+        mario_grab_used_object(m);
+        m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
+        if (m->action != ACT_PUNCHING) {
+            return TRUE;
+        }
+    }
+
+    if (m->heldObj != NULL) {
+        set_mario_action(m, ACT_PICKING_UP, 0);
+    }
+    
     perform_ground_step(m);
     return FALSE;
 }
