@@ -20,21 +20,13 @@
 static const LevelScript script_func_local_1[] = {
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_03, /*pos*/  3326,   0, -2110, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_04, /*pos*/  3454,   0,   301, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
-    // OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_05, /*pos*/  7168,   0,  1408, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_06, /*pos*/     0,   0,  3712, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_07, /*pos*/ -3199,   0,  3456, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_08, /*pos*/ -3367,   0,    53, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0A, /*pos*/     0,   0,     0, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0B, /*pos*/     0,   0,  6272, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
-    // OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0C, /*pos*/  5632,   0,  1408, /*angle*/ 0, 270, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0C, /*pos*/  2048,   0,  3456, /*angle*/ 0, 180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
-    // OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0C, /*pos*/ -4607,   0,  3456, /*angle*/ 0, 270, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0C, /*pos*/ -3327,   0,  1589, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
-    //OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0D, /*pos*/     0,   0, -2047, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
-    // This behavior differs from the rest in that it actually has collision rather than being purely visual.
-    // A likely explanation is that this object was added in after the collision model was made, and they didn't want
-    // to redo the collision so they just added a new behavior for it.
-    // OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0E, /*pos*/ -5115, 300, -3200, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLHexagonalMesh),
     RETURN(),
 };
 
@@ -52,7 +44,6 @@ static const LevelScript script_func_local_2[] = {
 
 static const LevelScript script_func_local_3[] = {
     OBJECT(/*model*/ MODEL_LLL_ROTATING_HEXAGONAL_PLATFORM,    /*pos*/ -2694,    0, -1795, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLRotatingHexagonalPlatform),
-    // OBJECT(/*model*/ MODEL_NONE,                               /*pos*/ -3180,    0,  1906, /*angle*/ 0,  0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvLLLFloatingWoodBridge),
     RETURN(),
 };
 
