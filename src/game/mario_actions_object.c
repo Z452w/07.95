@@ -32,6 +32,8 @@ s32 act_punching(struct MarioState *m) {
 
     if (m->heldObj != NULL) {
         set_mario_action(m, ACT_PICKING_UP, 0);
+    } else {
+        return NULL;
     }
     
     perform_ground_step(m);
