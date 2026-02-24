@@ -10,7 +10,7 @@ ALIGNED8 const Texture outside_09000800[] = {
 
 // 0x09001000
 ALIGNED8 const Texture outside_09001000[] = {
-#include "textures/outside/castle_grounds_textures.06800.rgba16.inc.c"
+#include "textures/outside/castle_grounds_textures.01000.rgba16.inc.c"
 };
 
 // 0x09002000
