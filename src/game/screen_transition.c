@@ -240,11 +240,11 @@ s32 render_screen_transition(s8 fadeTimer, s8 transType, u8 transTime,
             return render_fade_transition_into_color(fadeTimer, transTime, transData);
             break;
         case WARP_TRANSITION_FADE_FROM_STAR:
-            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_STAR,
+            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_CIRCLE,
                                               TRANS_TYPE_MIRROR);
             break;
         case WARP_TRANSITION_FADE_INTO_STAR:
-            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_STAR,
+            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_CIRCLE,
                                               TRANS_TYPE_MIRROR);
             break;
         case WARP_TRANSITION_FADE_FROM_CIRCLE:
@@ -256,19 +256,19 @@ s32 render_screen_transition(s8 fadeTimer, s8 transType, u8 transTime,
                                               TRANS_TYPE_MIRROR);
             break;
         case WARP_TRANSITION_FADE_FROM_MARIO:
-            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_MARIO,
+            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_CIRCLE,
                                               TRANS_TYPE_MIRROR);
             break;
         case WARP_TRANSITION_FADE_INTO_MARIO:
-            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_MARIO,
+            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_CIRCLE,
                                               TRANS_TYPE_MIRROR);
             break;
         case WARP_TRANSITION_FADE_FROM_BOWSER:
-            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_BOWSER,
+            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_CIRCLE,
                                               TRANS_TYPE_MIRROR);
             break;
         case WARP_TRANSITION_FADE_INTO_BOWSER:
-            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_BOWSER,
+            return render_textured_transition(fadeTimer, transTime, transData, TEX_TRANS_CIRCLE,
                                               TRANS_TYPE_MIRROR);
             break;
     }
