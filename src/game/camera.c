@@ -1302,15 +1302,6 @@ s32 update_fixed_camera(struct Camera *c, Vec3f focus, UNUSED Vec3f pos) {
     Vec3f basePos;
     UNUSED u8 filler[12];
 
-    // Don't move closer to Mario in these areas
-    switch (gCurrLevelArea) {
-
-        case AREA_CASTLE_LOBBY:
-            scaleToMario = 0.5f;
-            heightOffset = 0.f;
-            break;
-    }
-
     handle_c_button_movement(c);
 
     calc_y_to_curr_floor(&focusFloorOff, 1.f, 200.f, &focusFloorOff, 0.9f, 200.f);
@@ -4343,7 +4334,7 @@ u8 get_cutscene_from_mario_status(struct Camera *c) {
                     //! ACT_ENTERING_STAR_DOOR
                     if (c->mode == CAMERA_MODE_SPIRAL_STAIRS || c->mode == CAMERA_MODE_CLOSE
                         || c->doorStatus == DOOR_ENTER_LOBBY) {
-                        cutscene = open_door_cutscene(CUTSCENE_DOOR_PULL_MODE, CUTSCENE_DOOR_PUSH_MODE);
+                        cutscene = open_door_cutscene(CUTSCENE_DOOR_PULL, CUTSCENE_DOOR_PUSH);
                     } else {
                         cutscene = open_door_cutscene(CUTSCENE_DOOR_PULL, CUTSCENE_DOOR_PUSH);
                     }
