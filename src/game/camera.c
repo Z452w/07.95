@@ -2771,7 +2771,6 @@ void init_camera(struct Camera *c) {
     // gLakituState.keyDanceRoll = 0;
     gLakituState.unused = 0;
     sStatusFlags &= ~CAM_FLAG_SMOOTH_MOVEMENT;
-    vec3f_set(sCastleEntranceOffset, 0.f, 0.f, 0.f);
     find_mario_floor_and_ceil(&sMarioGeometry);
     sMarioGeometry.prevFloorHeight = sMarioGeometry.currFloorHeight;
     sMarioGeometry.prevCeilHeight = sMarioGeometry.currCeilHeight;
