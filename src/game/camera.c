@@ -1305,9 +1305,6 @@ s32 update_fixed_camera(struct Camera *c, Vec3f focus, UNUSED Vec3f pos) {
     vec3f_get_dist_and_angle(focus, c->pos, &distCamToFocus, &faceAngle[0], &faceAngle[1]);
     faceAngle[2] = 0;
 
-    vec3f_copy(basePos, sFixedModeBasePosition);
-    vec3f_add(basePos, sCastleEntranceOffset);
-
     if (sMarioGeometry.currFloorType != SURFACE_DEATH_PLANE
         && sMarioGeometry.currFloorHeight != FLOOR_LOWER_LIMIT) {
         goalHeight = sMarioGeometry.currFloorHeight + basePos[1] + heightOffset;
