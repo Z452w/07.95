@@ -1490,13 +1490,8 @@ void mode_parallel_tracking_camera(struct Camera *c) {
 void mode_fixed_camera(struct Camera *c) {
     UNUSED u8 unused[8];
 
-    if (gCurrLevelNum == LEVEL_CASTLE) {
-        set_fov_function(CAM_FOV_APP_45);
-    }
-
     c->nextYaw = update_fixed_camera(c, c->focus, c->pos);
     c->yaw = c->nextYaw;
-    vec3f_set(sCastleEntranceOffset, 0.f, 0.f, -15.f);
 }
 
 /**
