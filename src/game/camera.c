@@ -135,7 +135,6 @@ extern s16 s8DirModeBaseYaw;
 extern s16 s8DirModeYawOffset;
 extern f32 sCannonYOffset;
 extern struct ModeTransitionInfo sModeInfo;
-extern Vec3f sCastleEntranceOffset;
 extern u32 sParTrackIndex;
 extern struct ParallelTrackingPoint *sParTrackPath;
 extern struct CameraStoredInfo sParTrackTransOff;
@@ -316,10 +315,6 @@ f32 sCannonYOffset;
  */
 struct CutsceneVariable sCutsceneVars[10];
 struct ModeTransitionInfo sModeInfo;
-/**
- * Offset added to sFixedModeBasePosition when Mario is inside, near the castle lobby entrance
- */
-Vec3f sCastleEntranceOffset;
 
 /**
  * The index into the current parallel tracking path
