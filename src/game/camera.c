@@ -4315,13 +4315,7 @@ u8 get_cutscene_from_mario_status(struct Camera *c) {
         if (sMarioCamState->cameraEvent == CAM_EVENT_DOOR) {
             switch (gCurrLevelArea) {
                 case AREA_CASTLE_LOBBY:
-                    //! doorStatus is never DOOR_ENTER_LOBBY when cameraEvent == 6, because
-                    //! doorStatus is only used for the star door in the lobby, which uses
-                    //! ACT_ENTERING_STAR_DOOR
-                    if (c->mode == CAMERA_MODE_SPIRAL_STAIRS || c->mode == CAMERA_MODE_CLOSE
-                        || c->doorStatus == DOOR_ENTER_LOBBY) {
-                        cutscene = open_door_cutscene(CUTSCENE_DOOR_PULL, CUTSCENE_DOOR_PUSH);
-                    } else {
+                    if (c->mode == CAMERA_MODE_SPIRAL_STAIRS || c->mode == CAMERA_MODE_CLOSE) {
                         cutscene = open_door_cutscene(CUTSCENE_DOOR_PULL, CUTSCENE_DOOR_PUSH);
                     }
                     break;
