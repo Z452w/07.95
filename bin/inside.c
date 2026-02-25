@@ -5,12 +5,12 @@
 
 // 0x09000000
 ALIGNED8 const Texture inside_09000000[] = {
-#include "textures/inside/inside_castle_textures.07000.rgba16.inc.c"
+#include "textures/inside/inside_castle_textures.00000.rgba16.inc.c"
 };
 
 // 0x09001000
 ALIGNED8 const Texture inside_09001000[] = {
-#include "textures/inside/inside_castle_textures.07000.rgba16.inc.c"
+#include "textures/inside/inside_castle_textures.01000.rgba16.inc.c"
 };
 
 // 0x09002000
