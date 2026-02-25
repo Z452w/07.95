@@ -2660,7 +2660,7 @@ void update_camera(struct Camera *c) {
                 break;
 
             case CAMERA_MODE_FIXED:
-                mode_fixed_camera(c);
+                mode_lakitu_camera(c);
                 break;
 
             case CAMERA_MODE_SPIRAL_STAIRS:
@@ -2816,7 +2816,7 @@ void init_camera(struct Camera *c) {
             gCameraMovementFlags |= CAM_MOVE_ZOOMED_OUT;
             break;
         case LEVEL_CASTLE:
-            marioOffset[2] = 190.f;
+            marioOffset[2] = -300.f;
             break;
     }
     if (c->mode == CAMERA_MODE_8_DIRECTIONS) {
