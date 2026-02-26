@@ -118,7 +118,7 @@ s32 act_idle(struct MarioState *m) {
         }
 
         if (is_anim_at_end(m)) {
-            set_mario_action(m, ACT_IDLE, 0);
+            ++m->actionState;
         }
     }
 
