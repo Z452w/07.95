@@ -96,10 +96,6 @@ s32 check_common_hold_idle_cancels(struct MarioState *m) {
 }
 
 s32 act_idle(struct MarioState *m) {
-    /*if (!(m->actionArg & 1) && m->health < 0x500) {
-        return set_mario_action(m, ACT_PANTING, 0);
-    }*/
-
     if (check_common_idle_cancels(m)) {
         return TRUE;
     }
@@ -113,7 +109,15 @@ s32 act_idle(struct MarioState *m) {
     } else {
         switch (m->actionState) {
             case 0:
-                set_mario_animation(m, MARIO_ANIM_FIRST_PERSON);
+                set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_LEFT);
+                break;
+
+            case 1:
+                set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_RIGHT);
+                break;
+
+            case 2:
+                set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_CENTER);
                 break;
         }
 
