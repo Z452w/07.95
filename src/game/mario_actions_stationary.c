@@ -109,6 +109,8 @@ s32 act_idle(struct MarioState *m) {
     }
 
     if (m->actionArg & 1) {
+        set_mario_animation(m, MARIO_ANIM_STAND_AGAINST_WALL);
+    } else {
         switch (m->actionState) {
             case 0:
                 set_mario_animation(m, MARIO_ANIM_FIRST_PERSON);
