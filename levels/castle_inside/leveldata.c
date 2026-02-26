@@ -22,6 +22,3 @@
 #include "levels/castle_inside/areas/1/hallway/model.inc.c"
 #include "levels/castle_inside/areas/1/collision.inc.c"
 #include "levels/castle_inside/areas/1/room.inc.c"
-
-#include "levels/castle_inside/trap_door/model.inc.c"
-#include "levels/castle_inside/trap_door/collision.inc.c"
