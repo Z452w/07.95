@@ -23,11 +23,6 @@ static const LevelScript script_func_local_1[] = {
 };
 
 static const LevelScript script_func_local_2[] = {
-    // OBJECT(/*model*/ MODEL_BOO,  /*pos*/ -3217, 100,  -101, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvCourtyardBooTriplet),
-    // OBJECT(/*model*/ MODEL_BOO,  /*pos*/  3317, 100, -1701, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvCourtyardBooTriplet),
-    // OBJECT(/*model*/ MODEL_BOO,  /*pos*/   -71,   1, -1387, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvCourtyardBooTriplet),
-    OBJECT(/*model*/ MODEL_MR_I, /*pos*/  2160, -194, -510, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
-    OBJECT(/*model*/ MODEL_MR_I, /*pos*/ -2160, -194, -510, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvMrI),
     RETURN(),
 };
 
