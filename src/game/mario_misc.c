@@ -36,7 +36,7 @@ enum UnlockDoorStarStates {
  * The eye texture on succesive frames of Mario's blink animation.
  * He intentionally blinks twice each time.
  */
-static s8 gMarioBlinkAnimation[7] = { 1, 2, 1, 0, 1, 2, 1 };
+static s8 gMarioBlinkAnimation[3] = { 1, 2, 1 };
 
 struct MarioBodyState gBodyStates[2]; // 2nd is never accessed in practice, most likely Luigi related
 struct GraphNodeObject gMirrorMario;  // copy of Mario's geo node for drawing mirror Mario
@@ -214,8 +214,8 @@ Gfx *geo_switch_mario_eyes(s32 callContext, struct GraphNode *node, UNUSED Mat4 
 
     if (callContext == GEO_CONTEXT_RENDER) {
         if (bodyState->eyeState == 0) {
-            blinkFrame = ((switchCase->numCases * 32 + gAreaUpdateCounter) >> 1) & 0xF;
-            if (blinkFrame < 7) {
+            blinkFrame = ((switchCase->numCases * 32 + gAreaUpdateCounter) >> 1) & 0x3F;
+            if (blinkFrame < 3) {
                 switchCase->selectedCase = gMarioBlinkAnimation[blinkFrame];
             } else {
                 switchCase->selectedCase = 0;
