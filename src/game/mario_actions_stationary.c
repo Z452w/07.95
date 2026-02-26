@@ -255,6 +255,7 @@ s32 act_hold_heavy_idle(struct MarioState *m) {
 
 s32 act_standing_against_wall(struct MarioState *m) {
     return set_mario_action(m, ACT_IDLE, 0);
+}
 
 s32 act_crouching(struct MarioState *m) {
     if (m->input & INPUT_STOMPED) {
