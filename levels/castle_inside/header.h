@@ -13,7 +13,6 @@ extern struct Painting ccm_painting;
 extern struct Painting wf_painting;
 extern struct Painting jrb_painting;
 extern struct Painting lll_painting;
-extern const Gfx trapdoor_mesh[]; //trap door
 extern Gfx castle_inside_main_dl_mesh[];
 extern Gfx castle_inside_decal_dl_mesh[];
 extern Gfx castle_inside_bowser_dl_mesh[];
