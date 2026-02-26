@@ -23,7 +23,6 @@ static struct SpecialPreset sSpecialObjectPresets[] = {
     { special_yellow_coin_2,                      SPTYPE_NO_YROT_OR_PARAMS,  0x00, MODEL_YELLOW_COIN, bhvYellowCoin },
     { special_unknown_3,                          SPTYPE_NO_YROT_OR_PARAMS,  0x00, MODEL_UNKNOWN_B8, bhvStaticObject },
     { special_boo,                                SPTYPE_NO_YROT_OR_PARAMS,  0x00, MODEL_BOO, bhvCourtyardBooTriplet },
-    { special_unknown_5,                          SPTYPE_NO_YROT_OR_PARAMS,  0x00, MODEL_UNKNOWN_AC, bhvCastleFloorTrap },
     { special_lll_drawbridge_spawner,             SPTYPE_YROT_NO_PARAMS,     0x00, MODEL_LLL_DRAWBRIDGE_PART, bhvLLLDrawbridgeSpawner },
     { special_empty_9,                            SPTYPE_NO_YROT_OR_PARAMS,  0x00, MODEL_NONE, bhvStaticObject },
     { special_lll_rotating_block_with_fire_bars,  SPTYPE_NO_YROT_OR_PARAMS,  0x00, MODEL_LLL_ROTATING_BLOCK_FIRE_BARS, bhvLLLRotatingBlockWithFireBars },
