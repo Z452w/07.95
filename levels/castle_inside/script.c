@@ -90,7 +90,6 @@ const LevelScript level_castle_inside_entry[] = {
     LOAD_MIO0_TEXTURE(/*seg*/ 0x09, _inside_mio0SegmentRomStart, _inside_mio0SegmentRomEnd),
     ALLOC_LEVEL_POOL(),
     MARIO(/*model*/ MODEL_MARIO, /*bhvParam*/ BPARAM4(0x01), /*bhv*/ bhvMario),
-    LOAD_MODEL_FROM_GEO(MODEL_CASTLE_BOWSER_TRAP,        castle_geo_000F18),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR_WARP,          RCP_HmsMainDoor),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR,               RCP_HmsMainDoor),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR_A,             RCP_HmsMainroomDoorA),
@@ -101,7 +100,6 @@ const LevelScript level_castle_inside_entry[] = {
     // It is possible that star doors were originally going to have numbers on them, similar to the other locked doors.
 
     AREA(/*index*/ 1, castle_geo),
-        OBJECT(/*model*/ MODEL_NONE,              /*pos*/    0, 614, -6261, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00140000, /*bhv*/ bhvCastleFloorTrap),
         OBJECT(/*model*/ MODEL_CASTLE_DOOR_A,     /*pos*/-1690, 205, -2319, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvDoor),
         OBJECT(/*model*/ MODEL_CASTLE_DOOR_B,     /*pos*/ -947,   0, -3061, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvDoor),
         OBJECT(/*model*/ MODEL_CASTLE_DOOR_C,     /*pos*/  947,   0, -3061, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvDoor),
@@ -117,8 +115,7 @@ const LevelScript level_castle_inside_entry[] = {
         WARP_NODE(/*id*/ 0xF1, /*destLevel*/ LEVEL_CASTLE_GROUNDS, /*destArea*/ 0x01, /*destNode*/ 0x03, /*flags*/ WARP_NO_CHECKPOINT),
         TERRAIN(/*terrainData*/ castle_inside_collision),
         ROOMS(/*surfaceRooms*/ castle_inside_collision_rooms),
-        SHOW_DIALOG(/*index*/ 0x00, DIALOG_021),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0001, /*seq*/ SEQ_LEVEL_INSIDE_CASTLE),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_SOUND_PLAYER),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
 
