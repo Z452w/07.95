@@ -456,11 +456,6 @@ s32 analog_stick_held_back(struct MarioState *m) {
 s32 begin_braking_action(struct MarioState *m) {
     mario_drop_held_object(m);
 
-    if (m->actionState == 1) {
-        m->faceAngle[1] = m->actionArg;
-        return set_mario_action(m, ACT_STANDING_AGAINST_WALL, 0);
-    }
-
     /*if (m->forwardVel >= 16.0f && m->floor->normal.y >= 0.17364818f) {
         return set_mario_action(m, ACT_BRAKING, 0);
     }*/
