@@ -194,29 +194,7 @@ s32 act_sleeping(struct MarioState *m) {
 }
 
 s32 act_waking_up(struct MarioState *m) {
-    if (m->input & INPUT_STOMPED) {
-        return set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
-    }
-
-    if (m->input & INPUT_OFF_FLOOR) {
-        return set_mario_action(m, ACT_FREEFALL, 0);
-    }
-
-    if (m->input & INPUT_ABOVE_SLIDE) {
-        return set_mario_action(m, ACT_BEGIN_SLIDING, 0);
-    }
-
-    m->actionTimer++;
-
-    if (m->actionTimer > 20) {
-        return set_mario_action(m, ACT_IDLE, 0);
-    }
-
-    stationary_ground_step(m);
-
-    set_mario_animation(m, !m->actionArg ? MARIO_ANIM_WAKE_FROM_SLEEP : MARIO_ANIM_WAKE_FROM_LYING);
-
-    return FALSE;
+    return set_mario_action(m, ACT_IDLE, 0);
 }
 
 s32 act_hold_idle(struct MarioState *m) {
