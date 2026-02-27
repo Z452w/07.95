@@ -674,10 +674,18 @@ s32 play_mode_normal(void) {
             set_play_mode(PLAY_MODE_CHANGE_LEVEL);
         } else if (sTransitionTimer != 0) {
             set_play_mode(PLAY_MODE_CHANGE_AREA);
-        } else if (pressed_pause()) {
-            level_set_transition(0, 0);
-            gCurrLevelNum = LEVEL_NONE;
-            return 101;
+                } else if (pressed_pause()) {
+            sWarpDest.levelNum = 101;
+            sWarpDest.type = WARP_TYPE_CHANGE_LEVEL;
+
+            set_play_mode(PLAY_MODE_CHANGE_LEVEL);
+
+            level_set_transition(1, NULL);
+
+            gCurrSaveFileNum = 4;
+            gCurrActNum = 6;
+
+            return 0;
         }
     }
 
@@ -689,12 +697,12 @@ s32 play_mode_paused(void) {
         if (gCurrCourseNum >= COURSE_MIN) {
             set_menu_mode(MENU_MODE_RENDER_PAUSE_SCREEN);
         } else {
-            set_menu_mode(MENU_MODE_UNUSED_0); /* stage select */
+            set_menu_mode(MENU_MODE_UNUSED_0);
         }
     } else if (gMenuOptSelectIndex == MENU_OPT_DEFAULT) {
         raise_background_noise(1);
         set_play_mode(PLAY_MODE_NORMAL);
-    } else { // MENU_OPT_EXIT_COURSE
+    } else {
         if (gCurrCourseNum >= COURSE_MIN) {
             if (gDebugLevelSelect) {
                 fade_into_special_warp(-9, 1);
