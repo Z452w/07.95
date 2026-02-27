@@ -756,7 +756,7 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
 
     switch (action) {
         case ACT_DOUBLE_JUMP:
-            set_mario_y_vel_based_on_fspeed(m, 52.0f, 0.25f);
+            set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.25f);
             m->forwardVel *= 0.8f;
             break;
 
@@ -768,7 +768,7 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
         case ACT_WATER_JUMP:
         case ACT_HOLD_WATER_JUMP:
             if (actionArg == 0) {
-                set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.0f);
+                set_mario_y_vel_based_on_fspeed(m, 52.0f, 0.0f);
             }
             break;
 
@@ -780,7 +780,7 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
         case ACT_JUMP:
         case ACT_HOLD_JUMP:
             m->marioObj->header.gfx.animInfo.animID = -1;
-            set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.25f);
+            set_mario_y_vel_based_on_fspeed(m, 52.0f, 0.25f);
             if (m->actionState != 0 && m->wall != NULL) {
                 m->forwardVel = m->intendedMag;
             }
@@ -797,14 +797,14 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
             break;
 
         case ACT_SIDE_FLIP:
-            set_mario_y_vel_based_on_fspeed(m, 45.0f, 0.0f);
+            set_mario_y_vel_based_on_fspeed(m, 52.0f, 0.0f);
             m->forwardVel = 8.0f;
             m->faceAngle[1] = m->intendedYaw;
             break;
 
         case ACT_STEEP_JUMP:
             m->marioObj->header.gfx.animInfo.animID = -1;
-            set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.25f);
+            set_mario_y_vel_based_on_fspeed(m, 52.0f, 0.25f);
             m->faceAngle[0] = -0x2000;
             break;
 
