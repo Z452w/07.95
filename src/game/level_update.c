@@ -675,17 +675,7 @@ s32 play_mode_normal(void) {
         } else if (sTransitionTimer != 0) {
             set_play_mode(PLAY_MODE_CHANGE_AREA);
                 } else if (pressed_pause()) {
-            sWarpDest.levelNum = 101;
-            sWarpDest.type = WARP_TYPE_CHANGE_LEVEL;
-
-            set_play_mode(PLAY_MODE_CHANGE_LEVEL);
-
-            level_set_transition(1, NULL);
-
-            gCurrSaveFileNum = 4;
-            gCurrActNum = 6;
-
-            return 0;
+            fade_into_special_warp(-9, 1);
         }
     }
 
