@@ -674,6 +674,10 @@ s32 play_mode_normal(void) {
             set_play_mode(PLAY_MODE_CHANGE_LEVEL);
         } else if (sTransitionTimer != 0) {
             set_play_mode(PLAY_MODE_CHANGE_AREA);
+        } else if (pressed_pause()) {
+            level_set_transition(0, 0);
+            gCurrLevelNum = LEVEL_NONE;
+            return 101;
         }
     }
 
