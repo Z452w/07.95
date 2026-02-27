@@ -110,13 +110,11 @@ s32 act_holding_pole(struct MarioState *m) {
     int anim = MARIO_ANIM_IDLE_ON_POLE;
 
     if (m->input & INPUT_A_PRESSED) {
-        add_tree_leaf_particles(m);
         m->faceAngle[1] += 0x8000;
         return set_mario_action(m, ACT_JUMP, 0);
     }
 
     if (m->input & INPUT_Z_PRESSED) {
-        add_tree_leaf_particles(m);
         m->forwardVel = -2.0f;
         return set_mario_action(m, ACT_SOFT_BONK, 0);
     }
@@ -144,10 +142,7 @@ s32 act_holding_pole(struct MarioState *m) {
         marioObj->oMarioPolePos -= marioObj->oMarioPoleYawVel / 0x100;
 
         if (m->usedObj->behavior == segmented_to_virtual(bhvTree)) {
-            //! The Shifting Sand Land palm tree check is done climbing up in
-            // add_tree_leaf_particles, but not here, when climbing down.
             if (m->pos[1] - m->floorHeight > 100.0f) {
-                m->particleFlags |= PARTICLE_LEAF;
             }
         }
         play_climbing_sounds(m, 2);
@@ -170,11 +165,9 @@ s32 act_climbing_pole(struct MarioState *m) {
     s16 cameraAngle = m->area->camera->yaw;
 
     if (m->input & INPUT_A_PRESSED) {
-        add_tree_leaf_particles(m);
         m->faceAngle[1] += 0x8000;
-        return set_mario_action(m, ACT_WALL_KICK_AIR, 0);
+        return set_mario_action(m, ACT_JUMP, 0);
     }
-
     if (m->controller->stickY < 8.0f) {
         return set_mario_action(m, ACT_HOLDING_POLE, 0);
     }
@@ -204,12 +197,10 @@ s32 act_grab_pole_slow(struct MarioState *m) {
                 m->faceAngle[1] -= m->controller->stickX * 16.0f;
             }
             if (m->input & INPUT_A_PRESSED) {
-                add_tree_leaf_particles(m);
                 m->faceAngle[1] += 0x8000;
-                return set_mario_action(m, ACT_WALL_KICK_AIR, 0);
+                return set_mario_action(m, ACT_JUMP, 0);
             }
             if (m->input & INPUT_Z_PRESSED) {
-                add_tree_leaf_particles(m);
                 m->forwardVel = -2.0f;
                 return set_mario_action(m, ACT_SOFT_BONK, 0);
             }
@@ -239,12 +230,10 @@ s32 act_grab_pole_fast(struct MarioState *m) {
                     m->faceAngle[1] -= m->controller->stickX * 16.0f;
                 }
                 if (m->input & INPUT_A_PRESSED) {
-                    add_tree_leaf_particles(m);
                     m->faceAngle[1] += 0x8000;
-                    return set_mario_action(m, ACT_WALL_KICK_AIR, 0);
+                    return set_mario_action(m, ACT_JUMP, 0);
                 }
                 if (m->input & INPUT_Z_PRESSED) {
-                    add_tree_leaf_particles(m);
                     m->forwardVel = -2.0f;
                     return set_mario_action(m, ACT_SOFT_BONK, 0);
                 }
