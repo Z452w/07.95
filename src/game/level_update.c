@@ -674,9 +674,6 @@ s32 play_mode_normal(void) {
             set_play_mode(PLAY_MODE_CHANGE_LEVEL);
         } else if (sTransitionTimer != 0) {
             set_play_mode(PLAY_MODE_CHANGE_AREA);
-        } else if (pressed_pause()) {
-            lower_background_noise(1);
-            set_play_mode(PLAY_MODE_PAUSED);
         }
     }
 
