@@ -483,27 +483,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
         switch (m->actionTimer) {
             case 0:
                 if (val04 > 6.0f) {
-                    m->actionTimer = 2;
-                    m->pretipTimer = 0;
-                } else {
-                    val14 = (m->intendedMag * 10000.0f) * 2.5f;
-                    set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val14);
-                    play_step_sound(m, 7, 22);
-                    if (is_anim_past_frame(m, 25)) {
-                        m->pretipTimer += 1;
-                    }
-                    if (m->pretipTimer > 2) {
-                        m->actionTimer = 1;
-                        m->pretipTimer = 0;
-                    }
-
-                    val0C = FALSE;
-                }
-                break;
-
-            case 1:
-                if (val04 > 6.0f) {
-                    m->actionTimer = 2;
+                    m->actionTimer = 1;
                 } else {
                     val14 = (m->intendedMag * 10000.0f) * 5.0f;
                     set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val14);
@@ -513,11 +493,11 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                 }
                 break;
 
-            case 2:
+            case 1:
                 if (val04 < 5.0f) {
                     m->actionTimer = 0;
                 } else if (val04 > 9.0f) {
-                    m->actionTimer = 3;
+                    m->actionTimer = 2;
                 } else {
                     //! (Speed Crash) If Mario's speed is more than 2^17.
                     val14 = (s32) (val04 / 4.0f * 0x10000);
@@ -528,9 +508,9 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                 }
                 break;
 
-            case 3:
+            case 2:
                 if (val04 < 6.0f) {
-                    m->actionTimer = 2;
+                    m->actionTimer = 1;
                 } else {
                     //! (Speed Crash) If Mario's speed is more than 2^17.
                     val14 = (s32) (val04 / 4.0f * 0x10000);
