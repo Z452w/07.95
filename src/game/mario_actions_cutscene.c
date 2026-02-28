@@ -303,20 +303,9 @@ void general_star_dance_handler(struct MarioState *m) {
     if (m->actionState == 0) {
         switch (++m->actionTimer) {
             case 1:
-                //spawn_object(m->marioObj, MODEL_STAR, bhvCelebrationStar);
                 disable_background_sound();
                 play_course_clear();
                 break;
-
-            #ifndef OCTOBERTHIRTEEN
-            #ifndef POWBUILD
-            case 99:
-                play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
-            #else
-            case 42:
-                play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
-            #endif
-            #endif
             break;
 
             case 80:
@@ -335,39 +324,22 @@ void general_star_dance_handler(struct MarioState *m) {
 
 s32 act_star_dance(struct MarioState *m) {
     m->faceAngle[1] = m->area->camera->yaw;
-    #ifndef OCTOBERTHIRTEEN
-    #ifndef POWBUILD
-    set_mario_animation(m, m->actionState == 2 ? MARIO_ANIM_RETURN_FROM_STAR_DANCE
-                                               : MARIO_ANIM_STAR_DANCE_POWER);
-    #else
-    set_mario_animation(m, m->actionState == 2 ? MARIO_ANIM_RETURN_FROM_STAR_DANCE
-                                               : MARIO_ANIM_STAR_DANCE);
-    #endif
-    #endif
+    set_mario_animation(m, MARIO_ANIM_A_POSE);
     general_star_dance_handler(m);
-    #ifndef OCTOBERTHIRTEEN
-    #ifndef POWBUILD
-    if (m->actionState != 2 && m->actionTimer >= 102) {
-        m->marioBodyState->handState = MARIO_HAND_PEACE_SIGN;
-    }
-    #else
     if (m->actionState != 2 && m->actionTimer >= 40) {
         m->marioBodyState->handState = MARIO_HAND_PEACE_SIGN;
     }
-    #endif
-    #endif
     stop_and_set_height_to_floor(m);
     return FALSE;
 }
 
 s32 act_star_dance_water(struct MarioState *m) {
     m->faceAngle[1] = m->area->camera->yaw;
-    set_mario_animation(m, m->actionState == 2 ? MARIO_ANIM_RETURN_FROM_WATER_STAR_DANCE
-                                               : MARIO_ANIM_WATER_STAR_DANCE);
+    set_mario_animation(m, MARIO_ANIM_A_POSE);
     vec3f_copy(m->marioObj->header.gfx.pos, m->pos);
     vec3s_set(m->marioObj->header.gfx.angle, 0, m->faceAngle[1], 0);
     general_star_dance_handler(m);
-    if (m->actionState != 2 && m->actionTimer >= 62) {
+    if (m->actionState != 2 && m->actionTimer >= 40) {
         m->marioBodyState->handState = MARIO_HAND_PEACE_SIGN;
     }
     return FALSE;
@@ -1206,12 +1178,5 @@ s32 mario_execute_cutscene_action(struct MarioState *m) {
         case ACT_SQUISHED:                   cancel = act_squished(m);                   break;
     }
     /* clang-format on */
-
-#ifdef POWBUILD
-    if (!cancel && (m->input & INPUT_IN_WATER)) {
-        m->particleFlags |= PARTICLE_IDLE_WATER_WAVE;
-    }
-#endif
-
     return cancel;
 }
