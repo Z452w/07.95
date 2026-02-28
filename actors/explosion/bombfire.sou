@@ -57,10 +57,6 @@ static Gfx gfx_bombfire[] = {
 			 G_TX_WRAP | G_TX_NOMIRROR, G_TX_WRAP | G_TX_NOMIRROR,
 			 5,5, G_TX_NOLOD, G_TX_NOLOD),
 
-	gsSPVertex(&vtx_bomfire[0], 4, 0),
-	gsSP1Triangle(0, 1, 2, 0),
-	gsSP1Triangle(0, 2, 3, 0),
-
     gsSPTexture(1, 1, 0, G_TX_RENDERTILE, G_OFF),
     gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
 	gsSPEndDisplayList()
