@@ -93,7 +93,6 @@ const LevelScript level_bbh_entry[] = {
         TERRAIN(/*terrainData*/ ghost_house_collision),
         MACRO_OBJECTS(/*objList*/ bbh_seg7_macro_objs),
         ROOMS(/*surfaceRooms*/ bbh_seg7_rooms),
-        SHOW_DIALOG(/*index*/ 0x00, DIALOG_098),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SPOOKY),
     END_AREA(),
 
