@@ -24,7 +24,7 @@ STUB_LEVEL(  "",      LEVEL_SL,               COURSE_SL,                        
 STUB_LEVEL(  "",       LEVEL_WDW,              COURSE_WDW,                                  17000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("TINBOTU", LEVEL_JRB,              COURSE_JRB,                  jrb,              water,    20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("BIG WORLD",      LEVEL_THI,              COURSE_THI,      thi,              grass,    20000,    0x00, 0x00, 0x00, _,         _)
-STUB_LEVEL(  "", LEVEL_TTC,              COURSE_TTC,        18000,    0x00, 0x00, 0x00, _,         _)
+DEFINE_LEVEL("CLOCK TOWER",    LEVEL_TTC,              COURSE_TTC,      ttc,              machine,  18000,    0x00, 0x00, 0x00, _,         _)
 STUB_LEVEL(  "", LEVEL_RR,               COURSE_RR,                                   20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("MAIN MAP",       LEVEL_CASTLE_GROUNDS,   COURSE_NONE,     castle_grounds,   outside,  25000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("YOKO SCRL", LEVEL_BITDW,            COURSE_BITDW,    bitdw,            sky,      16000,    0x28, 0x28, 0x28, _,         _)
@@ -49,4 +49,3 @@ DEFINE_LEVEL("DUMMY",               LEVEL_UNKNOWN_35,       COURSE_NONE,     dum
 DEFINE_LEVEL(  "DONKEY", LEVEL_TTM,              COURSE_TTM,      ttm,              mountain, 15000,    0x08, 0x08, 0x08, _,         _)
 DEFINE_LEVEL("IWTEST",               LEVEL_UNKNOWN_37,       COURSE_NONE,     iwtest,           generic,  20000,    0x00, 0x00, 0x00, _,         _)
 STUB_LEVEL(  "CAVE DUNGEON", LEVEL_HMC,              COURSE_HMC,                                  16000,    0x00, 0x00, 0x00, _,         _)
-
