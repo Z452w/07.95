@@ -14,7 +14,6 @@
 #include "actors/common1.h"
 
 #include "make_const_nonconst.h"
-#include "levels/ttc/header.h"
 
 static const LevelScript script_func_local_1[] = {
     RETURN(),
