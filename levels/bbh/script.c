@@ -32,15 +32,6 @@ static const LevelScript script_func_local_2[] = {
 };
 
 static const LevelScript script_func_local_3[] = {
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 2248, 50, 465, 0, -140, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1845, 50, -40, 0, -180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1453, 50, 716, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ -1244, 0, 874, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ -676, 0, 1742, 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 660, 50, -2090, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 660, 50, -1210, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 2299, 50, -2118, 0, 135, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
-    //OBJECT(/*model*/ MODEL_BOO,                        /*pos*/ 1099, 50, -1118, 0, -55, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBoo),
     RETURN(),
 };
 
@@ -53,7 +44,6 @@ static const LevelScript script_func_local_4[] = {
 const LevelScript level_bbh_entry[] = {
     INIT_LEVEL(),
     LOAD_MIO0        (/*seg*/ 0x07, _bbh_segment_7SegmentRomStart, _bbh_segment_7SegmentRomEnd),
-    //LOAD_MIO0        (/*seg*/ 0x0A, _bbh_skybox_mio0SegmentRomStart, _bbh_skybox_mio0SegmentRomEnd),
     LOAD_MIO0_TEXTURE(/*seg*/ 0x09, _spooky_mio0SegmentRomStart, _spooky_mio0SegmentRomEnd),
     LOAD_MIO0        (/*seg*/ 0x05, _group9_mio0SegmentRomStart, _group9_mio0SegmentRomEnd),
     LOAD_RAW         (/*seg*/ 0x0C, _group9_geoSegmentRomStart,  _group9_geoSegmentRomEnd),
@@ -67,17 +57,8 @@ const LevelScript level_bbh_entry[] = {
     JUMP_LINK(script_func_global_10),
     JUMP_LINK(script_func_global_18),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR,               RCP_HmsMainDoor),
-    /*LOAD_MODEL_FROM_GEO(MODEL_BBH_STAIRCASE_STEP,         geo_bbh_0005B0),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_TILTING_FLOOR_PLATFORM, geo_bbh_0005C8),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_TUMBLING_PLATFORM,      geo_bbh_0005E0),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_TUMBLING_PLATFORM_PART, geo_bbh_0005F8),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_MOVING_BOOKSHELF,       geo_bbh_000610),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_MESH_ELEVATOR,          geo_bbh_000628),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_MERRY_GO_ROUND,         geo_bbh_000640),
-    LOAD_MODEL_FROM_GEO(MODEL_BBH_WOODEN_TOMB,            geo_bbh_000658),*/
 
     AREA(/*index*/ 1, Bbh_area_1),
-        //JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
         JUMP_LINK(script_func_local_3),
         JUMP_LINK(script_func_local_4),
