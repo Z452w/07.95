@@ -16,9 +16,6 @@
 #include "levels/castle_courtyard/header.h"
 
 static const LevelScript script_func_local_1[] = {
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/     0, 200, -1652, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvAmbientSounds),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/ -2700,   0, -1652, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvBirdsSoundLoop),
-    OBJECT(/*model*/ MODEL_NONE, /*pos*/  2700,   0, -1652, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00010000, /*bhv*/ bhvBirdsSoundLoop),
     RETURN(),
 };
 
@@ -41,12 +38,13 @@ const LevelScript level_castle_courtyard_entry[] = {
     JUMP_LINK(script_func_global_1),
     JUMP_LINK(script_func_global_10),
     JUMP_LINK(script_func_global_18),
+    LOAD_MODEL_FROM_GEO(MODEL_BITDW_WARP_PIPE,       warp_pipe_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BUBBLY_TREE,           RCP_HmsMainTree),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR_WARP,      RCP_HmsMainDoor),
 
     AREA(/*index*/ 1, courtyard_geo),
-        OBJECT(/*model*/ MODEL_NONE, /*pos*/     0,   51, -1000, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvLaunchStarCollectWarp),
-        OBJECT(/*model*/ MODEL_NONE, /*pos*/     0,   51, -1000, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvLaunchDeathWarp),
+        OBJECT(/*model*/ MODEL_BITDW_WARP_PIPE, /*pos*/     0,   -100, -1308, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_05), /*bhv*/ bhvWarpPipe),
+        OBJECT(/*model*/ MODEL_NONE, /*pos*/     0,   -100, -1308, /*angle*/ 0, 180, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0B), /*bhv*/ bhvLaunchDeathWarp),
         WARP_NODE(/*id*/ WARP_NODE_05,    /*destLevel*/ LEVEL_BBH,              /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0A,    /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         WARP_NODE(/*id*/ WARP_NODE_0B,    /*destLevel*/ LEVEL_CASTLE_COURTYARD, /*destArea*/ 1, /*destNode*/ WARP_NODE_0B, /*flags*/ WARP_NO_CHECKPOINT),
@@ -55,7 +53,6 @@ const LevelScript level_castle_courtyard_entry[] = {
         JUMP_LINK(script_func_local_1),
         JUMP_LINK(script_func_local_2),
         TERRAIN(/*terrainData*/ courtyard_collision),
-        //MACRO_OBJECTS(/*objList*/ castle_courtyard_seg7_macro_objs),
         SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_SOUND_PLAYER),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_STONE),
     END_AREA(),
