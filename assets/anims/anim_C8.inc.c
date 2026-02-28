@@ -1,7 +1,7 @@
 static const struct Animation anim_C8[] = {
     1,
     189,
-    0,
+    6,
     0,
     0x14,
     ANIMINDEX_NUMPARTS(anim_C8_indices),
