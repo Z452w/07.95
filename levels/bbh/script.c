@@ -82,6 +82,7 @@ const LevelScript level_bbh_entry[] = {
         JUMP_LINK(script_func_local_3),
         JUMP_LINK(script_func_local_4),
         OBJECT(/*model*/ MODEL_NONE, /*pos*/ -700, 0, -1650, /*angle*/ 0, 90, 0, /*bhvParam*/ BPARAM2(WARP_NODE_0A), /*bhv*/ bhvSpinAirborneWarp),
+        WARP_NODE(/*id*/ WARP_NODE_0A,    /*destLevel*/ LEVEL_BBH,              /*destArea*/ 1, /*destNode*/ WARP_NODE_0A, /*flags*/ WARP_NO_CHECKPOINT),
         OBJECT(/*model*/ MODEL_CASTLE_DOOR,       /*pos*/ 1727, 0, -939, 0, -180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvDoor),
         OBJECT(/*model*/ MODEL_CASTLE_DOOR,       /*pos*/ -935, 0, -517, 0, 90, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvDoor),
         OBJECT(/*model*/ MODEL_CASTLE_DOOR,       /*pos*/ -583, 0, 939, 0, -180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvDoor),
