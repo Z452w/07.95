@@ -50,7 +50,7 @@ ALIGNED8 static const u8 wf_seg7_texture_07005800[] = {
 
 // 0x07006000 - 0x07006800
 ALIGNED8 static const u8 wf_seg7_texture_07006000[] = {
-#include "levels/wf/10.rgba16.inc.c"
+#include "actors/mario/meye00_txt.rgba16.inc.c"
 };
 
 // 0x07006800 - 0x07007000
