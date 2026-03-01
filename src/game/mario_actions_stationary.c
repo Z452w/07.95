@@ -208,7 +208,7 @@ s32 act_waking_up(struct MarioState *m) {
 
     m->actionTimer++;
 
-    if (m->actionTimer > 26) {
+    if (m->actionTimer > 20) {
         return set_mario_action(m, ACT_IDLE, 0);
     }
 
