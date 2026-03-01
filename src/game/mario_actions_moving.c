@@ -225,30 +225,30 @@ s32 update_sliding(struct MarioState *m, f32 stopSpeed) {
 
     switch (mario_get_floor_class(m)) {
         case SURFACE_CLASS_VERY_SLIPPERY:
-            accel = 24.0f;
+            accel = 10.0f;
             lossFactor = m->intendedMag / 32.0f * forward * 0.02f + 0.98f;
             break;
 
         case SURFACE_CLASS_SLIPPERY:
             if ((m->area->terrainType & TERRAIN_MASK) == TERRAIN_SNOW) {
-                accel = 24.0f;
-                lossFactor = m->intendedMag / 32.0f * forward * 0.02f + 0.92f;
+                accel = 8.0f;
+                lossFactor = m->intendedMag / 32.0f * forward * 0.02f + 0.96f;
             } else {
-                accel = 24.0f;
+                accel = 7.0f;
                 lossFactor = m->intendedMag / 32.0f * forward * 0.02f + 0.92f;
             }
             break;
 
         default:
-            accel = 24.0f;
+            accel = 7.0f;
             lossFactor = m->intendedMag / 32.0f * forward * 0.02f + 0.92f;
             break;
 
         case SURFACE_CLASS_NOT_SLIPPERY:
-            accel = 24.0f;
+            accel = 5.0f;
             lossFactor = m->intendedMag / 32.0f * forward * 0.02f + 0.92f;
             break;
-    }
+}
 
     oldSpeed = sqrtf(m->slideVelX * m->slideVelX + m->slideVelZ * m->slideVelZ);
 
