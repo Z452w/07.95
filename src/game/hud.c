@@ -17,8 +17,8 @@
 #define HUD_TOP_Y 210
 
 void render_hud_power_meter(void) {
-    print_text(110, HUD_TOP_Y, "POWER");
-    print_text_fmt_int(126, HUD_TOP_Y - 17, "%02d", gHudDisplay.wedges);
+    print_text(94, HUD_TOP_Y, "POWER");
+    print_text_fmt_int(110, HUD_TOP_Y - 17, "%02d", gHudDisplay.wedges);
 }
 
 void render_hud_mario_lives(void) {
