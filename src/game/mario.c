@@ -252,7 +252,6 @@ void play_sound_if_no_flag(struct MarioState *m, u32 soundBits, u32 flags) {
  */
 void play_mario_jump_sound(struct MarioState *m) {
     if (!(m->flags & MARIO_MARIO_SOUND_PLAYED)) {
-        play_sound(SOUND_MARIO_YAH_WAH_HOO + ((gAudioRandom % 3) << 16),
                    m->marioObj->header.gfx.cameraToObject);
         m->flags |= MARIO_MARIO_SOUND_PLAYED;
     }
@@ -262,16 +261,6 @@ void play_mario_jump_sound(struct MarioState *m) {
  * Spawns particles if the step sound says to, then either plays a step sound or relevant other sound.
  */
 void play_sound_and_spawn_particles(struct MarioState *m, u32 soundBits, u32 waveParticleType) {
-#ifdef POWBUILD
-    if (m->terrainSoundAddend == (SOUND_TERRAIN_WATER << 16)) {
-        if (waveParticleType != 0) {
-            m->particleFlags |= PARTICLE_SHALLOW_WATER_SPLASH;
-        } else {
-            m->particleFlags |= PARTICLE_SHALLOW_WATER_WAVE;
-        }
-    }
-#endif
-
     if (soundBits == SOUND_ACTION_UNSTUCK_FROM_GROUND || soundBits == SOUND_ACTION_SPIN) {
         play_sound(soundBits, m->marioObj->header.gfx.cameraToObject);
     } else {
@@ -332,10 +321,6 @@ void play_mario_sound(struct MarioState *m, s32 actionSound, s32 marioSound) {
     }
 
     if (marioSound == 0) {
-        play_mario_jump_sound(m);
-    }
-
-    if (marioSound != -1) {
         play_sound_if_no_flag(m, marioSound, MARIO_MARIO_SOUND_PLAYED);
     }
 }
