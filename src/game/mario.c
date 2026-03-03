@@ -262,6 +262,15 @@ void play_mario_jump_sound(struct MarioState *m) {
  */
 void play_sound_and_spawn_particles(struct MarioState *m, u32 soundBits, u32 waveParticleType) {
     if (soundBits == SOUND_ACTION_UNSTUCK_FROM_GROUND || soundBits == SOUND_ACTION_SPIN) {
+        #ifdef POWBUILD
+    if (m->terrainSoundAddend == (SOUND_TERRAIN_WATER << 16)) {
+        if (waveParticleType != 0) {
+            m->particleFlags |= PARTICLE_SHALLOW_WATER_SPLASH;
+        } else {
+            m->particleFlags |= PARTICLE_SHALLOW_WATER_WAVE;
+        }
+    }
+#endif
         play_sound(soundBits, m->marioObj->header.gfx.cameraToObject);
     } else {
         play_sound(m->terrainSoundAddend + soundBits, m->marioObj->header.gfx.cameraToObject);
