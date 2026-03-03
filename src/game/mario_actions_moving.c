@@ -502,7 +502,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                     //! (Speed Crash) If Mario's speed is more than 2^17.
                     val14 = (s32) (val04 / 4.0f * 0x10000);
                     set_mario_anim_with_accel(m, MARIO_ANIM_START_TIPTOE, val14);
-                    play_step_sound(m, 10, 49);
+                    play_step_sound(m, 7, 22);
 
                     val0C = FALSE;
                 }
