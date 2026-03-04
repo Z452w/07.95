@@ -17,10 +17,9 @@
 #include "levels/thi/header.h"
 
 static const LevelScript script_func_local_4[] = {
-    LOAD_MODEL_FROM_GEO(MODEL_HANA,      RCP_HmsEnemyhana),
     OBJECT(/*model*/ MODEL_STAR,  /*pos*/   400, 4300, -1200,  /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStar),
     OBJECT(/*model*/ MODEL_STAR,  /*pos*/   -1900, -900, 6800, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvStar),
-    OBJECT(/*model*/ MODEL_HANA,  /*pos*/   -6193, -2969, 6121, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvHana),
+    OBJECT(/*model*/ MODEL_LEVEL_GEOMETRY_0C, /*pos*/  6320, -2367,  495, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStaticObject),
     RETURN(),
 };
 
