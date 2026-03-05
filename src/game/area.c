@@ -129,8 +129,7 @@ void print_intro_text(void) {
         if (gControllerBits == 0) {
             print_text_centered(SCREEN_WIDTH / 2, 20, "NO CONTROLLER");
         } else {
-            print_text_centered(60, 38 + 10, "PRESS");
-            print_text_centered(60, 20 + 10, "START");
+            print_text_centered(160, 30, "PRESS START");
         }
     }
 }
