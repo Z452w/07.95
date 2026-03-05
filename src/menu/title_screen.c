@@ -63,11 +63,6 @@ s16 intro_level_select(void) {
         gCurrLevelNum += 10, stageChanged = TRUE;
     }
 
-    // if the stage was changed, play the sound for changing a stage.
-    if (stageChanged) {
-        play_sound(SOUND_GENERAL_LEVEL_SELECT_CHANGE, gGlobalSoundSource);
-    }
-
     if (gCurrLevelNum > LEVEL_MAX) {
         gCurrLevelNum = LEVEL_MIN; // exceeded max. set to min.
     }
