@@ -35,9 +35,9 @@
 /*
  * light values
  */
-#define LIGHT_X 40
-#define LIGHT_Y 40
-#define LIGHT_Z 40
+#define LIGHT_X 0
+#define LIGHT_Y 0
+#define LIGHT_Z 127
 
 /*
  * generic ShapeColor defintion
