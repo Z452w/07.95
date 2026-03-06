@@ -682,11 +682,6 @@ s32 act_walking(struct MarioState *m) {
                 m->particleFlags |= PARTICLE_DUST;
             }
             break;
-
-        case GROUND_STEP_HIT_WALL:
-            push_or_sidle_wall(m, startPos);
-            m->actionTimer = 0;
-            break;
     }
 
     check_ledge_climb_down(m);
