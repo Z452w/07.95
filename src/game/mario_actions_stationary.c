@@ -44,7 +44,9 @@ s32 check_common_idle_cancels(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
+        if (mario_check_object_grab(m)) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
+        }
     }
 
     if (m->input & INPUT_NONZERO_ANALOG) {
@@ -339,7 +341,9 @@ s32 act_braking_stop(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
+        if (mario_check_object_grab(m)) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
+        }
     }
 
     if (!(m->input & INPUT_FIRST_PERSON)
@@ -521,7 +525,9 @@ s32 check_common_landing_cancels(struct MarioState *m, u32 action) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
+        if (mario_check_object_grab(m)) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
+        }
     }
 
     return FALSE;
