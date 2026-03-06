@@ -18,19 +18,9 @@ void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 en
 }
 
 s32 act_punching(struct MarioState *m) {
-        if (mario_check_object_grab(m)) {
-            return TRUE;
-            mario_grab_used_object(m);
-        m->marioBodyState->grabPos = GRAB_POS_LIGHT_OBJ;
-        if (m->action == ACT_PICKING_UP) {
-            return TRUE;
-        }
-        }
-
-    return m->marioBodyState->punchState = (0 << 6) | 4;
-    
-    stationary_ground_step(m);
-    return FALSE;
+    if (mario_check_object_grab(m)) {
+        return set_mario_action(m, ACT_PICKING_UP, 0);
+    }
 }
 
 s32 act_picking_up(struct MarioState *m) {
