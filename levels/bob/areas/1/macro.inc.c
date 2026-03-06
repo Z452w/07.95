@@ -1,6 +1,5 @@
 // 0x0701104C - 0x070113BE
 const MacroObject bob_seg7_macro_objs[] = {
-    MACRO_OBJECT(/*preset*/ macro_chain_chomp,               /*yaw*/   0, /*pos*/   260,   735,  1920),
     //MACRO_OBJECT(/*preset*/ macro_breakable_box_no_coins,    /*yaw*/   0, /*pos*/ -3900,     0,  4960),
     //MACRO_OBJECT(/*preset*/ macro_breakable_box_no_coins,    /*yaw*/   0, /*pos*/ -3350,    54,  5175),
     //MACRO_OBJECT(/*preset*/ macro_breakable_box_no_coins,    /*yaw*/   0, /*pos*/ -3350,    54,  4977),
@@ -8,22 +7,10 @@ const MacroObject bob_seg7_macro_objs[] = {
     //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_water_bomb_spawner,        /*yaw*/   0, /*pos*/  3620,  4000,  4800, /*behParam*/ 15),
     //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_water_bomb_spawner,        /*yaw*/   0, /*pos*/ -5141,  3764,  -743, /*behParam*/ 25),
     //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_water_bomb_spawner,        /*yaw*/   0, /*pos*/ -4208,  3769, -2036, /*behParam*/ 10),
-    #ifdef OCTOBERTHIRTEEN
-    //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   0, /*pos*/ -5016, 1331, -3532, /*behParam*/ 0x00),
-    #else
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   0, /*pos*/ -5016, 1331, -3532, /*behParam*/ 0x00),
-    #endif
     //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   0, /*pos*/  6349,  2080, -7066, /*behParam*/ 0xC0),
     //MACRO_OBJECT(/*preset*/ macro_water_bomb_cannon_2,         /*yaw*/   0, /*pos*/  4243,  3071, -2451),
     //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_wooden_signpost,           /*yaw*/ 270, /*pos*/    66,     0,  6977, /*behParam*/ DIALOG_113),
     //MACRO_OBJECT(/*preset*/ macro_coin_line_horizontal,      /*yaw*/ 120, /*pos*/  4836,  3079, -2707),
-    #ifdef OCTOBERTHIRTEEN
-    //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   0, /*pos*/    5632, 1280, 4608, /*behParam*/ 0x40),
-    //MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   1, /*pos*/   2529, 4293, -3706, /*behParam*/ 0xC0),
-    #else
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   0, /*pos*/    5632, 1280, 4608, /*behParam*/ 0x40),
-    MACRO_OBJECT_WITH_BHV_PARAM(/*preset*/ macro_cannon_open,             /*yaw*/   1, /*pos*/   2529, 4293, -3706, /*behParam*/ 0xC0),
-    #endif
     //MACRO_OBJECT(/*preset*/ macro_bobomb,                    /*yaw*/   0, /*pos*/ -3080,     0, -5200),
     MACRO_OBJECT(/*preset*/ macro_bobomb,                    /*yaw*/   0, /*pos*/ -3688,   885, -3813),
     MACRO_OBJECT(/*preset*/ macro_bobomb,                    /*yaw*/   0, /*pos*/ -4629,  1024, -1772),
