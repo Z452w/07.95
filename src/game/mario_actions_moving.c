@@ -618,11 +618,6 @@ void push_or_sidle_wall(struct MarioState *m, Vec3f startPos) {
         set_mario_animation(m, MARIO_ANIM_PUSHING);
         play_step_sound(m, 6, 18);
     } else {
-        if (dWallAngle < 0) {
-            set_mario_action(m, ACT_RUNNING, 0);
-        } else {
-            set_mario_action(m, ACT_RUNNING, 0);
-        }
 
         if (m->forwardVel < 4.0f) {
             m->particleFlags |= PARTICLE_DUST;
@@ -952,52 +947,7 @@ s32 act_hold_decelerating(struct MarioState *m) {
 }
 
 s32 act_crawling(struct MarioState *m) {
-    s32 val04;
-
-    if (should_begin_sliding(m)) {
-        return set_mario_action(m, ACT_BEGIN_SLIDING, 0);
-    }
-
-    if (m->input & INPUT_FIRST_PERSON) {
-        return set_mario_action(m, ACT_STOP_CRAWLING, 0);
-    }
-
-    if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_JUMP, 0);
-    }
-
-    if (m->input & INPUT_UNKNOWN_5) {
-        return set_mario_action(m, ACT_STOP_CRAWLING, 0);
-    }
-
-    if (!(m->input & INPUT_Z_DOWN)) {
-        return set_mario_action(m, ACT_STOP_CRAWLING, 0);
-    }
-
-    m->intendedMag *= 0.1f;
-
-    update_walking_speed(m);
-
-    switch (perform_ground_step(m)) {
-        case GROUND_STEP_LEFT_GROUND:
-            set_mario_action(m, ACT_FREEFALL, 0);
-            break;
-
-        case GROUND_STEP_HIT_WALL:
-            if (m->forwardVel > 10.0f) {
-                mario_set_forward_vel(m, 10.0f);
-            }
-            //! Possibly unintended missing break
-
-        case GROUND_STEP_NONE:
-            align_with_floor(m);
-            break;
-    }
-
-    val04 = (s32) (m->intendedMag * 2.0f * 0x10000);
-    set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val04);
-    play_step_sound(m, 26, 79);
-    return FALSE;
+    return set_mario_action(m, ACT_CROUCHING, 0);
 }
 
 s32 act_burning_ground(struct MarioState *m) {
