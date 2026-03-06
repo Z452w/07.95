@@ -619,9 +619,9 @@ void push_or_sidle_wall(struct MarioState *m, Vec3f startPos) {
         play_step_sound(m, 6, 18);
     } else {
         if (dWallAngle < 0) {
-            set_mario_anim_with_accel(m, MARIO_ANIM_SIDESTEP_RIGHT, val04);
+            set_mario_action(m, ACT_RUNNING, 0);
         } else {
-            set_mario_anim_with_accel(m, MARIO_ANIM_SIDESTEP_LEFT, val04);
+            set_mario_action(m, ACT_RUNNING, 0);
         }
 
         if (m->forwardVel < 4.0f) {
