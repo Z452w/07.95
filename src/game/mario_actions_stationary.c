@@ -46,10 +46,6 @@ s32 check_common_idle_cancels(struct MarioState *m) {
         return set_mario_action(m, ACT_WALKING, 0);
     }
 
-    if (m->input & INPUT_Z_DOWN) {
-        return set_mario_action(m, ACT_START_CROUCHING, 0);
-    }
-
     return FALSE;
 }
 
