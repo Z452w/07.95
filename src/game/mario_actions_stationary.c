@@ -15,6 +15,7 @@
 #include "save_file.h"
 #include "sound_init.h"
 #include "surface_terrains.h"
+#include "mario_actions_object.h"
 
 s32 check_common_idle_cancels(struct MarioState *m) {
     mario_drop_held_object(m);
