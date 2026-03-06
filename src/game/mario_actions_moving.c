@@ -659,10 +659,6 @@ s32 act_walking(struct MarioState *m) {
         return set_mario_action(m, ACT_TURNING_AROUND, 0);
     }
 
-    if (m->input & INPUT_Z_PRESSED) {
-        return set_mario_action(m, ACT_CROUCH_SLIDE, 0);
-    }
-
     vec3f_copy(startPos, m->pos);
     update_walking_speed(m);
 
