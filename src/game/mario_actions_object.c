@@ -20,7 +20,8 @@ void animated_stationary_ground_step(struct MarioState *m, s32 animation, u32 en
 s32 act_punching(struct MarioState *m) {
     if (mario_check_object_grab(m)) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
-    }
+    } else {
+        set_mario_action(m, ACT_IDLE, 0);
 }
 
 s32 act_picking_up(struct MarioState *m) {
@@ -157,7 +158,7 @@ s32 act_stomach_slide_stop(struct MarioState *m) {
         return set_mario_action(m, ACT_BEGIN_SLIDING, 0);
     }
 
-    animated_stationary_ground_step(m, MARIO_ANIM_SLOW_LAND_FROM_DIVE, ACT_IDLE);
+    animated_stationary_ground_step(m, MARIO_ANIM_SLIDESTANDUP, ACT_IDLE);
     return FALSE;
 }
 
