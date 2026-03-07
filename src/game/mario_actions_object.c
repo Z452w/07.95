@@ -22,6 +22,7 @@ s32 act_punching(struct MarioState *m) {
         return set_mario_action(m, ACT_PICKING_UP, 0);
     } else {
         set_mario_action(m, ACT_IDLE, 0);
+    }
 }
 
 s32 act_picking_up(struct MarioState *m) {
