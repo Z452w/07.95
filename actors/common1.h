@@ -107,6 +107,7 @@ extern Hierarchy RCP_HmsMainTree[];
 
 // warp_pipe
 extern Hierarchy RCP_HmsDokan[];
+extern const Collision warp_pipe_seg3_collision_03009AC8[];
 
 // warp_collision
 extern const Collision door_seg3_collision_0301CE78[];
