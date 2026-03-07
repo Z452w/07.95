@@ -798,16 +798,6 @@ const BehaviorScript bhvTower[] = {
     END_LOOP(),
 };
 
-const BehaviorScript bhvBulletBillCannon[] = {
-    BEGIN(OBJ_LIST_SURFACE),
-    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    LOAD_COLLISION_DATA(wf_seg7_collision_bullet_bill_cannon),
-    SET_FLOAT(oCollisionDistance, 300),
-    BEGIN_LOOP(),
-        CALL_NATIVE(load_object_collision_model),
-    END_LOOP(),
-};
-
 const BehaviorScript bhvRotatingCounterClockwise[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     BREAK(),
@@ -897,20 +887,6 @@ const BehaviorScript bhvSpawnedStarNoLevelExit[] = {
     CALL_NATIVE(bhv_spawned_star_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_spawned_star_loop),
-    END_LOOP(),
-};
-
-const BehaviorScript bhvCoinInsideBoo[] = {
-    BEGIN(OBJ_LIST_LEVEL),
-    SET_HITBOX(/*Radius*/ 100, /*Height*/ 64),
-    SET_INT(oInteractType, INTERACT_COIN),
-    OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -70, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
-    BILLBOARD(),
-    CALL_NATIVE(bhv_init_room),
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_coin_inside_boo_loop),
-        ADD_INT(oAnimState, 1),
     END_LOOP(),
 };
 
@@ -1022,34 +998,6 @@ const BehaviorScript bhvDoor[] = {
     CALL_NATIVE(bhv_door_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_door_loop),
-    END_LOOP(),
-};
-
-const BehaviorScript bhvThwomp[] = {
-    BEGIN(OBJ_LIST_SURFACE),
-    LOAD_COLLISION_DATA(dosun_info2),
-    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    DROP_TO_FLOOR(),
-    ADD_FLOAT(oPosY, 2),
-    SET_HOME(),
-    SCALE(/*Unused*/ 0, /*Field*/ 140),
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_grindel_thwomp_loop),
-        CALL_NATIVE(load_object_collision_model),
-    END_LOOP(),
-};
-
-const BehaviorScript bhvThwomp2[] = {
-    BEGIN(OBJ_LIST_SURFACE),
-    LOAD_COLLISION_DATA(dosun_info),
-    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    DROP_TO_FLOOR(),
-    ADD_FLOAT(oPosY, 2),
-    SCALE(/*Unused*/ 0, /*Field*/ 140),
-    SET_HOME(),
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_grindel_thwomp_loop),
-        CALL_NATIVE(load_object_collision_model),
     END_LOOP(),
 };
 
@@ -1398,22 +1346,6 @@ const BehaviorScript bhvHeaveHoThrowMario[] = {
     BILLBOARD(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_heave_ho_throw_mario_loop),
-    END_LOOP(),
-};
-
-const BehaviorScript bhvBulletBill[] = {
-    BEGIN(OBJ_LIST_GENACTOR),
-    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    SET_HOME(),
-    SET_HITBOX_WITH_OFFSET(/*Radius*/ 50, /*Height*/ 50, /*Downwards offset*/ 50),
-    SET_INTERACT_TYPE(INTERACT_DAMAGE),
-    SET_INT(oDamageOrCoinValue, 3),
-    SCALE(/*Unused*/ 0, /*Field*/ 40),
-    SET_INT(oIntangibleTimer, 0),
-    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ 0, /*Bounciness*/ 0, /*Drag strength*/ 0, /*Friction*/ 0, /*Buoyancy*/ 0, /*Unused*/ 0, 0),
-    CALL_NATIVE(bhv_bullet_bill_init),
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_bullet_bill_loop),
     END_LOOP(),
 };
 
@@ -1967,37 +1899,6 @@ const BehaviorScript bhvAnimatedTexture[] = {
     END_LOOP(),
 };
 
-const BehaviorScript bhvCourtyardBooTriplet[] = {
-    BEGIN(OBJ_LIST_DEFAULT),
-    DISABLE_RENDERING(),
-    CALL_NATIVE(bhv_courtyard_boo_triplet_init),
-    DEACTIVATE(),
-};
-
-const BehaviorScript bhvBoo[] = {
-    BEGIN(OBJ_LIST_GENACTOR),
-    SET_INT(oBhvParams2ndByte, BOO_BP_GENERIC),
-    GOTO(bhvGhostHuntBoo + 1),
-};
-
-const BehaviorScript bhvGhostHuntBoo[] = {
-    BEGIN(OBJ_LIST_GENACTOR),
-    // Boo - common:
-    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    SET_INT(oIntangibleTimer, 0),
-    SET_HOME(),
-    SET_INT(oDamageOrCoinValue, 2),
-    SET_HITBOX(/*Radius*/ 140, /*Height*/ 80),
-    SET_HURTBOX(/*Radius*/ 40, /*Height*/ 60),
-    SET_FLOAT(oGraphYOffset, 30),
-    CALL_NATIVE(bhv_init_room),
-    SPAWN_CHILD(/*Model*/ MODEL_YELLOW_COIN, /*Behavior*/ bhvCoinInsideBoo),
-    SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ 0, /*Bounciness*/ -50, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_boo_loop),
-    END_LOOP(),
-};
-
 const BehaviorScript bhvInsideCannon[] = {
     BREAK(),
 };
@@ -2540,31 +2441,6 @@ const BehaviorScript bhvRespawner[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_respawner_loop),
-    END_LOOP(),
-};
-
-const BehaviorScript bhvSmallBully[] = {
-    BEGIN(OBJ_LIST_GENACTOR),
-    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    LOAD_ANIMATIONS(oAnimations, otos_anime),
-    DROP_TO_FLOOR(),
-    SET_HOME(),
-    CALL_NATIVE(bhv_small_bully_init),
-    BEGIN_LOOP(),
-        SET_INT(oIntangibleTimer, 0),
-        CALL_NATIVE(bhv_bully_loop),
-    END_LOOP(),
-};
-
-const BehaviorScript bhvBigBullyWithMinions[] = {
-    BEGIN(OBJ_LIST_GENACTOR),
-    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    LOAD_ANIMATIONS(oAnimations, otos_anime),
-    SET_HOME(),
-    CALL_NATIVE(bhv_big_bully_init),
-    CALL_NATIVE(bhv_big_bully_with_minions_init),
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_big_bully_with_minions_loop),
     END_LOOP(),
 };
 
