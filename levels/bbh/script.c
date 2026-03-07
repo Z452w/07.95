@@ -57,7 +57,7 @@ const LevelScript level_bbh_entry[] = {
     JUMP_LINK(script_func_global_10),
     JUMP_LINK(script_func_global_18),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR,               RCP_HmsMainDoor),
-    LOAD_MODEL_FROM_GEO(MODEL_BITDW_WARP_PIPE,           warp_pipe_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_BITDW_WARP_PIPE,           RCP_HmsDokan),
 
     AREA(/*index*/ 1, Bbh_area_1),
         JUMP_LINK(script_func_local_2),
