@@ -43,12 +43,6 @@
 
 #define o gCurrentObject
 
-// Boo Roll
-static s16 sBooHitRotations[] = {
-    6047, 5664, 5292, 4934, 4587, 4254, 3933, 3624, 3329, 3046, 2775, 2517, 2271, 2039, 1818, 1611,
-    1416, 1233, 1063, 906,  761,  629,  509,  402,  308,  226,  157,  100,  56,   25,   4,    0,
-};
-
 #include "behaviors/mr_i.inc.c"
 #include "behaviors/pole.inc.c"
 #include "behaviors/beta_chest.inc.c"
@@ -95,7 +89,6 @@ void spawn_mist_particles_variable(s32 count, s32 offsetY, f32 size) {
 #include "behaviors/sparkle_spawn_star.inc.c"
 #include "behaviors/coin.inc.c"
 #include "behaviors/door.inc.c"
-#include "behaviors/thwomp.inc.c"
 #include "behaviors/tumbling_bridge.inc.c"
 #include "behaviors/water_mist_particle.inc.c"
 #include "behaviors/break_particles.inc.c"
@@ -144,7 +137,6 @@ void spawn_sparkle_particles(s32 n, s32 a1, s32 a2, s32 r) {
     D_8035FF10 += r * 0x100;
 }
 
-#include "behaviors/bullet_bill.inc.c"
 #include "behaviors/bowser.inc.c"
 #include "behaviors/bowser_flame.inc.c"
 #include "behaviors/blue_fish.inc.c"
@@ -191,7 +183,6 @@ s32 set_obj_anim_with_accel_and_sound(s16 a0, s16 a1, s32 a2) {
 #include "behaviors/sushi.inc.c"
 #include "behaviors/white_puff.inc.c"
 #include "behaviors/wdw_water_level.inc.c"
-#include "behaviors/boo.inc.c"
 #include "behaviors/bbh_tilting_trap.inc.c"
 #include "behaviors/bbh_merry_go_round.inc.c"
 #include "behaviors/static_checkered_platform.inc.c"
