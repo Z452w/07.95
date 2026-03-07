@@ -194,7 +194,6 @@ void bhv_sunken_ship_part_loop(void);
 void bhv_white_puff_1_loop(void);
 void bhv_water_level_diamond_loop(void);
 void bhv_init_changing_water_level_loop(void);
-void bhv_merry_go_round_boo_manager_loop(void);
 void bhv_animated_texture_loop(void);
 void obj_set_secondary_camera_focus(void);
 void bhv_play_music_track_when_touched_loop(void);
