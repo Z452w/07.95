@@ -11,7 +11,7 @@ ALIGNED8 static const Texture courtyard_DarkBrick_rgba16[] = {
 };
 
 ALIGNED8 static const Texture courtyard_DarkBrickLedge_rgba16[] = {
-#include "levels/castle_courtyard/courtyard_DarkBrickLedge.rgba16.inc.c"
+#include "levels/castle_courtyard/courtyard_DarkBrick.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture courtyard_PolkaDotDark_rgba16[] = {
