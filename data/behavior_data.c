@@ -1354,7 +1354,6 @@ const BehaviorScript bhvWhitePuffSmoke[] = {
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     BILLBOARD(),
     ADD_FLOAT(oPosY, -100),
-    CALL_NATIVE(bhv_white_puff_smoke_init),
     SET_INT(oAnimState, -1),
     BEGIN_REPEAT(10),
         ADD_INT(oAnimState, 1),
