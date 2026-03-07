@@ -42,7 +42,7 @@ ALIGNED8 static const Texture bowser_seg6_texture_06024438[] = {
 
 // 0x06025438
 ALIGNED8 static const Texture bowser_seg6_texture_06025438[] = {
-#include "actors/bowser/bowser_muzzle.rgba16.inc.c"
+#include "actors/bowser/bowser_body.rgba16.inc.c"
 };
 
 // 0x06025C38
