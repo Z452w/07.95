@@ -1892,7 +1892,6 @@ const BehaviorScript bhvAnimatedTexture[] = {
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -70, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
     BILLBOARD(),
     BEGIN_LOOP(),
-        CALL_NATIVE(bhv_animated_texture_loop),
         ADD_INT(oAnimState, 1),
         ANIMATE_TEXTURE(oAnimState, 2),
     END_LOOP(),
