@@ -38,7 +38,7 @@ const LevelScript level_castle_courtyard_entry[] = {
     JUMP_LINK(script_func_global_1),
     JUMP_LINK(script_func_global_10),
     JUMP_LINK(script_func_global_18),
-    LOAD_MODEL_FROM_GEO(MODEL_BITDW_WARP_PIPE,       warp_pipe_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_BITDW_WARP_PIPE,       RCP_HmsDokan),
     LOAD_MODEL_FROM_GEO(MODEL_BUBBLY_TREE,           RCP_HmsMainTree),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_DOOR_WARP,      RCP_HmsMainDoor),
 
