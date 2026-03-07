@@ -1231,8 +1231,7 @@ const Collision mountain_collision[] = {
 	COL_TRI_STOP(),
 	COL_SPECIAL_INIT(1),
     SPECIAL_OBJECT_WITH_YAW(/*preset*/ special_null_start,   /*pos*/  3405, 1024, 3968, /*yaw*/ 64), // unused, probably an early way to set intial position
-    COL_WATER_BOX_INIT(1),
-    COL_WATER_BOX(0, -1023, 1024, 3226, 4096, 973),
+    COL_WATER_BOX_INIT(0),
 	COL_END()
 };
 #endif
