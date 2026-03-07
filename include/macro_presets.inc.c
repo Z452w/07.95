@@ -34,14 +34,10 @@ static struct MacroPreset sMacroObjectPresets[] = {
     /* macro_chuckya                     */ { bhvChuckya, MODEL_CHUCKYA, 0 },
     /* macro_empty_52                    */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },
     /* macro_empty_80                    */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },
-    /* macro_bullet_bill_cannon          */ { bhvBulletBill, MODEL_BULLET_BILL, 0 }, // unused
     /* macro_heave_ho                    */ { bhvHeaveHo, MODEL_HEAVE_HO, 0 },
-    /* macro_thwomp                      */ { bhvThwomp, MODEL_THWOMP, 0 }, // unused
     /* macro_bobomb                      */ { bhvBobomb, MODEL_BLACK_BOBOMB, 0},
     /* macro_goomba                      */ { bhvGoomba, MODEL_GOOMBA, 0 },
     /* macro_empty_92                    */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },
-    /* macro_small_bully                 */ { bhvSmallBully, MODEL_BULLY, 0 },
-    /* macro_big_bully                   */ { bhvSmallBully, MODEL_BULLY_BOSS, 0 }, // unused
     /* macro_empty_95                    */ { bhvYellowCoin, MODEL_YELLOW_COIN, 0 },
     /* macro_bouncing_fireball_2         */ { bhvBouncingFireball, MODEL_NONE, 0 },
     /* macro_flamethrower                */ { bhvFlamethrower, MODEL_NONE, 4 },
