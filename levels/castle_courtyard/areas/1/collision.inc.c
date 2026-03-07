@@ -1026,7 +1026,6 @@ const Collision courtyard_collision[] = {
 	SPECIAL_OBJECT(/*preset*/ special_bubble_tree,       /*pos*/ -3195,   9,   317),
 	SPECIAL_OBJECT(/*preset*/ special_bubble_tree,       /*pos*/  3185,   9,   317),
 	SPECIAL_OBJECT_WITH_YAW_AND_PARAM(/*preset*/ special_castle_door_warp, /*pos*/     0,    0,   461, /*yaw*/   0, /*bhvParam2*/ 1), /* moved back here for consistency and accuracy */
-	COL_WATER_BOX_INIT(1),
-	COL_WATER_BOX(0, -656, -1963, 674, -659, 0),
+	COL_WATER_BOX_INIT(0),
 	COL_END()
 };
