@@ -8,7 +8,6 @@
 #include "geo_commands.h"
 #include "headers.h"
 
-#include "bully/otos.sou"
 UNUSED static const u64 binid_0 = 0;
 
 #include "blargg/model.inc.c"

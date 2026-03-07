@@ -7,5 +7,3 @@
 
 #include "common1.h"
 #include "group9.h"
-
-#include "boo/geo.inc.c"

@@ -4,13 +4,6 @@
 #include "types.h"
 #include "headers.h"
 
-// bullet_bill
-extern const GeoLayout bullet_bill_geo[];
-extern const Gfx bullet_bill_seg5_dl_0500E5E8[];
-extern const Gfx bullet_bill_seg5_dl_0500E678[];
-extern const Gfx bullet_bill_seg5_dl_0500E730[];
-extern const Gfx bullet_bill_seg5_dl_0500E8A8[];
-
 // heave_ho
 extern Hierarchy RCP_HmsEnemyomurobo[];
 extern AnimePtr omurobo_anime[];
@@ -42,11 +35,6 @@ extern const Gfx hoot_seg5_dl_05004B38[];
 extern const Gfx hoot_seg5_dl_05004CA8[];
 extern const Gfx hoot_seg5_dl_05004D48[];
 extern const struct Animation *const hoot_seg5_anims_05005768[];
-
-// thwomp
-extern Hierarchy RCP_HmsDosun[];
-extern const Collision dosun_info[];
-extern const Collision dosun_info2[];
 
 // yellow_sphere_small
 extern const GeoLayout yellow_sphere_geo[];

@@ -7,5 +7,4 @@
 #include "make_const_nonconst.h"
 #include "headers.h"
 
-#include "boo/model.inc.c"
 UNUSED static const u64 binid_5 = 5;

@@ -11,9 +11,4 @@ extern const Gfx blargg_seg5_dl_05005A60[];
 extern const Gfx blargg_seg5_dl_05005D00[];
 extern const struct Animation *const blargg_seg5_anims_0500616C[];
 
-// bully
-extern Hierarchy RCP_HmsEnemyotos_basedata[];
-extern Hierarchy RCP_HmsEnemyBigotos_basedata[];
-extern AnimePtr otos_anime[];
-
 #endif

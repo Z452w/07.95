@@ -18,7 +18,6 @@
 
 static const LevelScript script_func_local_1[] = {
     OBJECT(/*model*/ MODEL_NONE,   /*pos*/ -1080,  -840,  1573, /*angle*/ 0,   0, 0, /*bhvParam*/ BPARAM2(86), /*bhv*/ bhvPoleGrabbing),
-    //OBJECT(/*model*/ MODEL_THWOMP, /*pos*/ -1580,  3072,   988, /*angle*/ 0, 225, 0, /*bhvParam*/ BPARAM2(0),  /*bhv*/ bhvThwomp),
     RETURN(),
 };
 
