@@ -752,20 +752,6 @@ Gfx *geo_movtex_update_horizontal(s32 callContext, struct GraphNode *node, UNUSE
 
     if (callContext == GEO_CONTEXT_RENDER) {
         struct GraphNodeGenerated *asGenerated = (struct GraphNodeGenerated *) node;
-
-        switch (asGenerated->parameter) {
-            case MOVTEX_SSL_SAND_PIT_OUTSIDE:
-                movtexVerts = segmented_to_virtual(ttc_movtex_tris_small_surface_treadmill);
-                break;
-            case MOVTEX_SSL_SAND_PIT_PYRAMID:
-                movtexVerts = segmented_to_virtual(ttc_movtex_tris_big_surface_treadmill);
-                break;
-            case MOVTEX_TREADMILL_BIG:
-                movtexVerts = segmented_to_virtual(ttc_movtex_tris_big_surface_treadmill);
-                break;
-            case MOVTEX_TREADMILL_SMALL:
-                movtexVerts = segmented_to_virtual(ttc_movtex_tris_small_surface_treadmill);
-                break;
         }
         update_moving_texture_offset(movtexVerts, MOVTEX_ATTR_COLORED_S);
     }
