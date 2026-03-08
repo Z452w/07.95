@@ -19,7 +19,6 @@
 #include "level_table.h"
 #include "level_update.h"
 #include "levels/bob/header.h"
-#include "levels/ccm/header.h"
 #include "levels/lll/header.h"
 #include "levels/bitdw/header.h"
 #include "mario.h"
