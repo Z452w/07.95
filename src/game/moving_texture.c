@@ -752,7 +752,6 @@ Gfx *geo_movtex_update_horizontal(s32 callContext, struct GraphNode *node, UNUSE
 
     if (callContext == GEO_CONTEXT_RENDER) {
         struct GraphNodeGenerated *asGenerated = (struct GraphNodeGenerated *) node;
-        }
         update_moving_texture_offset(movtexVerts, MOVTEX_ATTR_COLORED_S);
     }
     return NULL;
