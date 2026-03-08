@@ -14,7 +14,6 @@
 #include "levels/bbh/header.h"
 #include "levels/bitdw/header.h"
 #include "levels/bob/header.h"
-#include "levels/ccm/header.h"
 #include "levels/ddd/header.h"
 #include "levels/jrb/header.h"
 #include "levels/thi/header.h"
