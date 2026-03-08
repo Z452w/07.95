@@ -21,7 +21,6 @@
 #include "levels/bob/header.h"
 #include "levels/ccm/header.h"
 #include "levels/lll/header.h"
-#include "levels/ttc/header.h"
 #include "levels/bitdw/header.h"
 #include "mario.h"
 #include "mario_actions_cutscene.h"
@@ -631,15 +630,6 @@ struct ObjectHitbox sPiranhaPlantFireHitbox = {
 
 #include "behaviors/flame.inc.c"
 #include "behaviors/horizontal_grindel.inc.c"
-#include "behaviors/ttc_rotating_solid.inc.c"
-#include "behaviors/ttc_pendulum.inc.c"
-#include "behaviors/ttc_treadmill.inc.c" // TODO
-#include "behaviors/ttc_moving_bar.inc.c"
-#include "behaviors/ttc_cog.inc.c"
-#include "behaviors/ttc_pit_block.inc.c"
-#include "behaviors/ttc_elevator.inc.c"
-#include "behaviors/ttc_2d_rotator.inc.c"
-#include "behaviors/ttc_spinner.inc.c"
 
 void obj_set_speed_to_zero(void) {
     o->oForwardVel = o->oVelY = 0.0f;
