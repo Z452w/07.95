@@ -28,7 +28,6 @@
  */
 struct AreaMapData *gMapPtrs[] = {
     &areaMap_04_01, /* big boo's haunt  */
-    &areaMap_05_01, /* cool cool mountain  */
     &areaMap_12_01, /* jolly roger bay */
     &areaMap_13_01, /* tiny-huge island */
     &areaMap_16_01, /* castle grounds */
