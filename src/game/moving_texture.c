@@ -120,15 +120,12 @@ float gPaintingMarioYEntry = 0.0f;
 /// Variable to ensure the initial Wet-Dry World water level is set only once
 s32 gWDWWaterLevelSet = FALSE;
 
-extern u8 ttc_yellow_triangle[];
-
 /**
  * An array for converting a movtex texture id to a pointer that can
  * be passed to gDPSetTextureImage.
  */
 u8 *gMovtexIdToTexture[] = { texture_waterbox_water, texture_waterbox_mist, texture_waterbox_jrb_water,
-                             texture_waterbox_unknown_water, texture_waterbox_lava,
-                             ttc_yellow_triangle, ttc_yellow_triangle, ttc_yellow_triangle };
+                             texture_waterbox_unknown_water, texture_waterbox_lava };
 
 extern Gfx bob_dl_waterfall[];
 extern s16 bob_movtex_tris_waterfall[];
@@ -142,11 +139,6 @@ extern Gfx ttm_dl_bottom_waterfall[];
 extern s16 ttm_movtex_tris_end_puddle_waterfall[];
 extern s16 ttm_movtex_tris_puddle_waterfall[];
 extern Gfx ttm_dl_puddle_waterfall[];
-extern s16 ttc_movtex_tris_big_surface_treadmill[];
-extern Gfx ttc_dl_surface_treadmill_begin[];
-extern Gfx ttc_dl_surface_treadmill_end[];
-extern Gfx ttc_dl_surface_treadmill[];
-extern s16 ttc_movtex_tris_small_surface_treadmill[];
 
 /**
  * MovtexObjects that have no color attributes per vertex (though the mesh
@@ -185,12 +177,6 @@ struct MovtexObject gMovtexNonColored[] = {
  * MovtexObjects that have color attributes per vertex.
  */
 struct MovtexObject gMovtexColored[] = {
-    { MOVTEX_TREADMILL_BIG, TEX_YELLOW_TRI_TTC, 12, ttc_movtex_tris_big_surface_treadmill,
-      ttc_dl_surface_treadmill_begin, ttc_dl_surface_treadmill_end, ttc_dl_surface_treadmill, 0xff,
-      0xff, 0xff, 0xff, LAYER_OPAQUE },
-    { MOVTEX_TREADMILL_SMALL, TEX_YELLOW_TRI_TTC, 12, ttc_movtex_tris_small_surface_treadmill,
-      ttc_dl_surface_treadmill_begin, ttc_dl_surface_treadmill_end, ttc_dl_surface_treadmill, 0xff,
-      0xff, 0xff, 0xff, LAYER_OPAQUE },
     { 0x00000000, 0x00000000, 0, NULL, NULL, NULL, NULL, 0x00, 0x00, 0x00, 0x00, 0x00000000 },
 };
 
