@@ -15,7 +15,7 @@ DEFINE_LEVEL("CASTLE",               LEVEL_UNKNOWN_1,        COURSE_NONE,     ca
 DEFINE_LEVEL("ATHLETIC",               LEVEL_UNKNOWN_2,        COURSE_NONE,     athletic,         generic,  20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("DONJON",               LEVEL_UNKNOWN_3,        COURSE_NONE,     donjon,           generic,  20000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("OBAKEYASHI",   LEVEL_BBH,              COURSE_BBH,      bbh,              spooky,   28000,    0x00, 0x00, 0x00, _,         _)
-DEFINE_LEVEL("YYAMA % YSLD", LEVEL_CCM,              COURSE_CCM,      ccm,              slide,    17000,    0x00, 0x00, 0x00, _,         _)
+STUB_LEVEL(  "", LEVEL_CCM,              COURSE_CCM,                        17000,    0x00, 0x00, 0x00, _,         _)
 DEFINE_LEVEL("SELECT ROOM",    LEVEL_CASTLE,           COURSE_NONE,     castle_inside,    inside,   20000,    0x00, 0x00, 0x00, _,         _)
 STUB_LEVEL(  "",               LEVEL_UNKNOWN_38,       COURSE_NONE,                                 20000,    0x00, 0x00, 0x00, sDynUnk38, _)
 STUB_LEVEL(  "", LEVEL_SSL,              COURSE_SSL,                                  15000,    0x00, 0x00, 0x00, _,         _)
